@@ -1,0 +1,1 @@
+<% response.sendRedirect("/Project.html"); %>
