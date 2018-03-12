@@ -1,39 +1,45 @@
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
-@WebServlet("/Project")
+public class Main {
+    public static void main(String[] args) throws SQLException {
+        ArrayList<Person> personlist = new ArrayList<Person>();
+        try {
+            // Step 1: Load the JDBC driver. jdbc:mysql://localhost:3306/travel
+            Class.forName("com.mysql.jdbc.Driver");
 
-public class Project extends HttpServlet //Extends HttpServlet to handle HTTP get requests and HTTP post requests
-{
-    //The servlet container calls this method to respond to a client request to the servlet
-    public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
-    {
-        //Sets the content type of the response being sent to the client, if the response has not been committed yet.
-        res.setContentType("text/html");
-        PrintWriter out = res.getWriter(); //Obtains a character-based output stream for sending text data to the client.
+            // Step 2: Establish the connection to the database.
+            String url = "jdbc:mysql://104.197.152.81:3306/Football";
+            Connection conn = DriverManager.getConnection(url, "root", "root");
+            Statement st = conn.createStatement();
+            ResultSet srs = st.executeQuery("SELECT * FROM PremierLeagueResultsAndOdds");
+            int ids,ids1,ids2;
+            String ps,ps1,ps2;
+            while (srs.next()) {
+//                Person person = new Person();
+                ids = srs.getInt("id");
+                ps = srs.getString("HomeTeam");
+                ps1 = srs.getString("AwayTeam");
+                ids1 = srs.getInt("HomeScore");
+                ids2 = srs.getInt("AwayScore");
+                ps2 = srs.getString("Winner");
+                System.out.println(ids+" "+ps+" "+ps1+" "+ids1+" "+ids2+" "+ps2+" ");
+            }
 
-        //Returns the value of a request parameter as a String, or null if the parameter does not exist.
-        String name = req.getParameter("filename");
+            //System.out.println(personlist.get(1).getID()+" "+personlist.get(1).getHomeTeam()+" "+personlist.get(1).getAwayTeam()+" "+personlist.get(1).getHomeScore()+" "+personlist.get(1).getAwayScore()+" "+personlist.get(1).getWinner());
+//            System.out.println(personlist.get(1).getHomeTeam());
+//            System.out.println(personlist.get(1).getAwayTeam());
+//            System.out.println(personlist.get(1).getHomeScore());
+//            System.out.println(personlist.get(1).getAwayScore());
+//            System.out.println(personlist.get(1).getWinner());
 
-        BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\jkjke\\Documents\\PythonProject\\Scripts\\"+name+".txt"));
-
-        String str;
-        //reads every line of the file
-        while( (str = br.readLine()) != null )
-        {
-            out.println(str + "<BR>");
+        } catch (Exception e) {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
         }
-        //back button
-        out.println("<br><button onclick=\"goBack()\">Back Button</button><script>function goBack() {\n" + "window.history.back();\n" + "}</script>");
-
-        br.close();
-        out.close();
     }
 }
