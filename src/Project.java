@@ -30,7 +30,6 @@ public class Project extends HttpServlet //Extends HttpServlet to handle HTTP ge
         {
             out.println(str + "<BR>");
         }
-
         //back button
         out.println("<br><button onclick=\"goBack()\">Back Button</button><script>function goBack() {\n" + "window.history.back();\n" + "}</script>");
 
