@@ -3,18 +3,19 @@
 
 import java.io.*;
 import java.sql.*;
+import java.util.List;
 import java.util.Objects;
 import java.util.logging.Logger;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-@WebServlet(name = "FootballPost", urlPatterns = {"/html_form_send.php"})
+@WebServlet(name = "Project", urlPatterns = {"/html_form_send.php"})
 
-public class FootballPost extends HttpServlet {
+public class Project extends HttpServlet {
     private Connection connection;
     private PreparedStatement results, booksid;
-    private final static Logger LOGGER = Logger.getLogger(FootballPost.class.getName());
+    private final static Logger LOGGER = Logger.getLogger(Project.class.getName());
 
     // set up database connection and prepare SQL statements
     public void init( ServletConfig config )
@@ -66,53 +67,46 @@ public class FootballPost extends HttpServlet {
         // head section of document
         out.println( "<head>" );
 
-        //out.println("<p>"+home+" "+away+" "+winner+" "+homescore+" "+awayscore+" "+"</p>");
-
-        //if none of the survey entries are empty
         try {
 
             String teamName = request.getParameter("age").trim();
+            String teamName1 = request.getParameter("age1").trim();
             Statement stmt = connection.createStatement();
             ResultSet rs;
+            ResultSet rs1;
             rs = stmt.executeQuery("SELECT * FROM PleaseWorkForEverything WHERE HomeTeam='"+teamName+"'");
-            System.out.println("HELLO: "+teamName);
 
-            //ResultSet totalRS = booksid.executeQuery();
+            out.println("<table BORDER=1 CELLPADDING=1 CELLSPACING=0 WIDTH=50%>"
+                    +"<tr><th>Home Team</th><th>Away Team</th><th>Home Score</th><th>Away Score</th><th>Winner</th></tr>");
+
             while (rs.next()) {
-                System.out.println("YOU ARE GETTING HERE!!!!!"+teamName);
                 String age = request.getParameter("age");
-                if (age.equals(teamName)) {
-                    String home = rs.getString(2);
-                    String away = rs.getString(3);
-                    String homescore = rs.getString(4);
-                    String awayscore = rs.getString(5);
-                    String winner = rs.getString(6);
-                    System.out.println(home+away+winner);
-                    out.println("<p>"+home+" "+away+" "+winner+" "+homescore+" "+awayscore+" "+"</p>");
+                String age1 = request.getParameter("age1");
 
-                } else if (age.equals("Chelsea")) {
-//                    Statement stmt = connection.createStatement();
-//                    ResultSet rs1 = stmt.executeQuery("SELECT * FROM PleaseWorkForEverything WHERE HomeTeam = 'Chelsea' AND AwayTeam = 'Chelsea'");
-//                    out.println("<p>"+rs1+"</p>");
-                } else if (age.equals("Liverpool")) {
-//                    Statement stmt = connection.createStatement();
-//                    ResultSet rs2 = stmt.executeQuery("SELECT * FROM PleaseWorkForEverything WHERE HomeTeam = 'Liverpool' AND AwayTeam = 'Liverpool'");
-//                    out.println("<p>"+rs2+"</p>");
-                } else {
-                    out.println("<p>Default!!!!!</p>");
+                if(!Objects.equals(age, age1))
+                {
+                    if (age.equals(teamName)) {
+                        String home = rs.getString(2);
+                        String away = rs.getString(3);
+                        String homescore = rs.getString(4);
+                        String awayscore = rs.getString(5);
+                        String winner = rs.getString(6);
+
+                        System.out.println(home+away+winner);
+                        out.print("<tr><td align=\"center\">"+home+"</td><td align=\"center\">"+away+"</td><td align=\"center\">"+homescore+"</td><td align=\"center\">"+awayscore+"</td><td align=\"center\">"+winner+"</td></tr>");
+                    } else {
+                        out.println("<p>No Results Found</p>");
+                    }
+                }
+                else {
+                    System.out.println("Two same teams picked");
+                    //out.println("<p>Team A and B must be different</p>");
                 }
             }
-//            // get results
-//            //results.executeUpdate();
-//            LOGGER.info("Results saved to database successfully!\n");
-//            out.println("<title>Thank you!</title>");
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("</br>Results successfully stored in database");
-            //out.println("<br><form>\n" + "<input class=\"MyButton\" type=\"button\" value=\"Check database results\" onclick=\"window.location.href='http://localhost:8080/Get'\" />\n" + "</form></br>");
+            out.print("</table>");
+            out.println("<p>Team A and B must be different</p>");
             out.println("<p>Thank you for participating.<br>");
             out.println("<button onclick=\"goBack()\">Back Button</button><script>function goBack() {\n" + "window.history.back();\n" + "}</script></br>");
-            // end XHTML document
             out.println("</pre></body></html>");
         }
 
