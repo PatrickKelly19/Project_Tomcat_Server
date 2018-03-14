@@ -9,12 +9,12 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-@WebServlet(name = "Project", urlPatterns = {"/html_form_send.php"})
+@WebServlet(name = "FootballPost", urlPatterns = {"/html_form_send.php"})
 
-public class Project extends HttpServlet {
+public class FootballPost extends HttpServlet {
     private Connection connection;
     private PreparedStatement results, booksid;
-    private final static Logger LOGGER = Logger.getLogger(Project.class.getName());
+    private final static Logger LOGGER = Logger.getLogger(FootballPost.class.getName());
 
     // set up database connection and prepare SQL statements
     public void init( ServletConfig config )
@@ -71,23 +71,17 @@ public class Project extends HttpServlet {
         //if none of the survey entries are empty
         try {
 
-//            Statement st = connection.createStatement();
-//            ResultSet rs = st.executeQuery("select * from PleaseWorkForEverything");
-
+            String teamName = request.getParameter("age").trim();
             Statement stmt = connection.createStatement();
             ResultSet rs;
-            rs = stmt.executeQuery("SELECT * FROM PleaseWorkForEverything WHERE HomeTeam = 'Arsenal'");
+            rs = stmt.executeQuery("SELECT * FROM PleaseWorkForEverything WHERE HomeTeam='"+teamName+"'");
+            System.out.println("HELLO: "+teamName);
 
             //ResultSet totalRS = booksid.executeQuery();
             while (rs.next()) {
+                System.out.println("YOU ARE GETTING HERE!!!!!"+teamName);
                 String age = request.getParameter("age");
-                if (age.equals("Arsenal")) {
-                    //Statement stmt = connection.createStatement();
-                    //Statement st=connection.createStatement();
-                    //ResultSet rs=st.executeQuery(sql);
-                    //ResultSet rs = stmt.executeQuery("SELECT * FROM PleaseWorkForEverything WHERE HomeTeam = 'Arsenal' AND AwayTeam = 'Arsenal'");
-//                    rs.getString(2);
-//                    System.out.println(rs.getString(2)); //gets the first column's rows.
+                if (age.equals(teamName)) {
                     String home = rs.getString(2);
                     String away = rs.getString(3);
                     String homescore = rs.getString(4);
@@ -95,7 +89,6 @@ public class Project extends HttpServlet {
                     String winner = rs.getString(6);
                     System.out.println(home+away+winner);
                     out.println("<p>"+home+" "+away+" "+winner+" "+homescore+" "+awayscore+" "+"</p>");
-//                    out.println("<p>"+rs.getString(2)+"</p>");
 
                 } else if (age.equals("Chelsea")) {
 //                    Statement stmt = connection.createStatement();
@@ -155,20 +148,3 @@ public class Project extends HttpServlet {
         }
     } // end of destroy method
 }
-
-/***************************************************************
- * (C) Copyright 2002 by Deitel & Associates, Inc. and         *
- * Prentice Hall. All Rights Reserved.                         *
- *                                                             *
- * DISCLAIMER: The authors and publisher of this book have     *
- * used their best efforts in preparing the book. These        *
- * efforts include the development, research, and testing of   *
- * the theories and programs to determine their effectiveness. *
- * The authors and publisher make no warranty of any kind,     *
- * expressed or implied, with regard to these programs or to   *
- * the documentation contained in these books. The authors     *
- * and publisher shall not be liable in any event for          *
- * incidental or consequential damages in connection with, or  *
- * arising out of, the furnishing, performance, or use of      *
- * these programs.                                             *
- ***************************************************************/
