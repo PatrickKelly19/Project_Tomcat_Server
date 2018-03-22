@@ -1,14 +1,20 @@
-// Fig. 9.27: SurveyServlet.java
-// A Web-based survey that uses JDBC from a servlet.
-
-import java.io.*;
-import java.sql.*;
-import java.util.List;
-import java.util.Objects;
-import java.util.logging.Logger;
-import javax.servlet.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.UnavailableException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.logging.Logger;
+
+import com.google.gson.Gson;
+import jdk.nashorn.internal.parser.JSONParser;
+import org.json.*;
 
 @WebServlet(name = "Project", urlPatterns = {"/html_form_send.php"})
 
@@ -48,81 +54,41 @@ public class Project extends HttpServlet {
                            HttpServletResponse response )
             throws ServletException, IOException
     {
+        response.setContentType("application/json;charset=UTF-8");
 
-        LOGGER.info("Gone into doPost\n");
-        // set up response to client
-        response.setContentType( "text/html" );
-        PrintWriter out = response.getWriter();
+        HeadtoHead(request,response);
 
-        // start XHTML document
-        out.println( "<?xml version = \"1.0\"?>" );
-
-        out.println( "<!DOCTYPE html PUBLIC \"-//W3C//DTD " +
-                "XHTML 1.0 Strict//EN\" \"http://www.w3.org" +
-                "/TR/xhtml1/DTD/xhtml1-strict.dtd\">" );
-
-        out.println(
-                "<html xmlns = \"http://www.w3.org/1999/xhtml\">" );
-
-        // head section of document
-        out.println( "<head>" );
-
-        try {
-
-            String teamName = request.getParameter("age").trim();
-            String teamName1 = request.getParameter("age1").trim();
-            Statement stmt = connection.createStatement();
-            ResultSet rs;
-            ResultSet rs1;
-            rs = stmt.executeQuery("SELECT * FROM PleaseWorkForEverything WHERE HomeTeam='"+teamName+"'");
-
-            out.println("<table BORDER=1 CELLPADDING=1 CELLSPACING=0 WIDTH=50%>"
-                    +"<tr><th>Home Team</th><th>Away Team</th><th>Home Score</th><th>Away Score</th><th>Winner</th></tr>");
-
-            while (rs.next()) {
-                String age = request.getParameter("age");
-                String age1 = request.getParameter("age1");
-
-                if(!Objects.equals(age, age1))
-                {
-                    if (age.equals(teamName)) {
-                        String home = rs.getString(2);
-                        String away = rs.getString(3);
-                        String homescore = rs.getString(4);
-                        String awayscore = rs.getString(5);
-                        String winner = rs.getString(6);
-
-                        System.out.println(home+away+winner);
-                        out.print("<tr><td align=\"center\">"+home+"</td><td align=\"center\">"+away+"</td><td align=\"center\">"+homescore+"</td><td align=\"center\">"+awayscore+"</td><td align=\"center\">"+winner+"</td></tr>");
-                    } else {
-                        out.println("<p>No Results Found</p>");
-                    }
-                }
-                else {
-                    System.out.println("Two same teams picked");
-                    //out.println("<p>Team A and B must be different</p>");
-                }
-            }
-            out.print("</table>");
-            out.println("<p>Team A and B must be different</p>");
-            out.println("<p>Thank you for participating.<br>");
-            out.println("<button onclick=\"goBack()\">Back Button</button><script>function goBack() {\n" + "window.history.back();\n" + "}</script></br>");
-            out.println("</pre></body></html>");
-        }
-
-        // if database exception occurs, return error page
-        catch (SQLException sqlException) {
-            sqlException.printStackTrace();
-            LOGGER.info("!Entry Database exception\n");
-            out.println("<title>Error</title>");
-            out.println("</head>");
-            out.println("<body><p>Database error occurred. ");
-            out.println("<br>");
-            out.println("<button onclick=\"goBack()\">Back Button</button><script>function goBack() {\n" + "window.history.back();\n" + "}</script>");
-            out.println("</br>");
-            out.println("Try again later.</p></body></html>");
-            out.close();
-        }
+//        try {
+//
+//            String teamName = request.getParameter("age").trim();
+//            Statement stmt = connection.createStatement();
+//            ResultSet rs;
+//            rs = stmt.executeQuery("SELECT * FROM PleaseWorkForEverything WHERE HomeTeam='"+teamName+"' OR AwayTeam='"+teamName+"'");
+//            JSONArray jArray = new JSONArray(); //create a JSON Array obj.
+//            while(rs.next()){
+//
+//                JSONObject job=new JSONObject(); //create a JSON Object obj.
+//                String age = request.getParameter("age");
+//
+//                if (age.equals(teamName)) {
+//                    job.put("HomeTeam", rs.getString(2));
+//                    job.put("AwayTeam", rs.getString(3));
+//                    job.put("Winner", rs.getString(6));
+//
+//                    jArray.put(job);
+//                }
+//            }
+//            JSONObject json1 = new JSONObject();
+//            request.setAttribute("jsonString", jArray.toString());
+//            RequestDispatcher dispatcher = request.getRequestDispatcher("Dance.jsp");
+//            dispatcher.forward(request, response);
+//        } catch (SQLException ignored)
+//        {
+//
+//
+//        } catch (IOException | JSONException ioE) {
+//            ioE.printStackTrace();
+//        }
     } // end of doPost method
 
     // close SQL statements and database when servlet terminates
@@ -141,4 +107,55 @@ public class Project extends HttpServlet {
             LOGGER.info("Database exceptions\n");
         }
     } // end of destroy method
+
+    private void HeadtoHead(HttpServletRequest request,
+                            HttpServletResponse response)
+            throws ServletException, IOException
+    {
+        try {
+
+            String teamName = request.getParameter("age").trim();
+            Statement stmt = connection.createStatement();
+            ResultSet rs;
+            rs = stmt.executeQuery("SELECT * FROM PleaseWorkForEverything WHERE HomeTeam='"+teamName+"' OR AwayTeam='"+teamName+"'");
+            JSONArray jArray = new JSONArray(); //create a JSON Array obj.
+            while(rs.next()){
+
+                JSONObject job = new JSONObject(); //create a JSON Object obj.
+                String age = request.getParameter("age");
+
+                if (age.equals(teamName)) {
+                    job.put("HomeTeam", rs.getString(2));
+                    job.put("AwayTeam", rs.getString(3));
+                    job.put("Winner", rs.getString(6));
+
+                    jArray.put(job);
+                }
+            }
+            request.setAttribute("jsonString", jArray.toString());
+            RequestDispatcher dispatcher = request.getRequestDispatcher("Dance.jsp");
+            dispatcher.forward(request, response);
+//            String json = new Gson().toJson(jArray);
+//
+//            response.setContentType("application/json");
+//            response.setCharacterEncoding("UTF-8");
+//            response.getWriter().write(json);
+            //response.getWriter().write(jArray.toString());
+//            request.setAttribute("jsonString", jArray.toString());
+//            System.out.println(jArray.toString());
+//            RequestDispatcher dispatcher = request.getRequestDispatcher("Dance.jsp");
+//            dispatcher.forward(request, response);
+//            String s = jArray.toString();
+//            request.getSession().setAttribute("jsonArray",s);
+//            response.sendRedirect("Dance.jsp");
+//            response.setContentType("application/json");
+//            response.setCharacterEncoding("UTF-8");
+//            response.getWriter().write(new Gson().toJson(jArray)); //this is how simple GSON works
+        } catch (SQLException ignored)
+        {
+
+        } catch (IOException | JSONException ioE) {
+            ioE.printStackTrace();
+        }
+    }
 }
