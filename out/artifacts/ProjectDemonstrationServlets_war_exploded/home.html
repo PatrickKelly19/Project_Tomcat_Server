@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<title>Tell Me The Result</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+    .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+    .fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="/Webpage/home.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+        <a href="/Webpage/Fixtures.jsp" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Fixtures</a>
+        <a href="/Webpage/Football.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Historical</a>
+        <a href="/Webpage/About.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+        <a href="/Webpage/Fixtures.jsp" class="w3-bar-item w3-button w3-padding-large">Fixtures</a>
+        <a href="/Webpage/Football.html" class="w3-bar-item w3-button w3-padding-large">Historical</a>
+        <a href="/Webpage/About.html" class="w3-bar-item w3-button w3-padding-large">About</a>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+    <h1 class="w3-margin w3-jumbo">Tell Me The Result</h1>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/w3css_templates.asp" target="_blank">Template by w3.css</a></p>
+    <a href="http://35.193.184.35/Webpage/Fixtures.jsp">
+        <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Upcoming Fixtures!</button>
+    </a>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+        <div class="w3-twothird">
+            <h1>Final Year Project GMIT</h1>
+            <h5 class="w3-padding-32">The title of my final year project is Football Prediction Analysis with Machine Learning. This project has been developed using the skills I've acquired over
+            the last five years of doing Computer and Electronic Engineering.</h5>
+
+            <p class="w3-text-grey">This project looks to improve the accuracy of prediction analysis for Premier League football machines using Machine Learning. The machine will learn from
+            data sets which include historical results and statistical information relating to the Premier League. This project is being developing during the 2017/18 season. It is completely cloud based.
+            The webpage TellMeTheResult.com is a domain name purchased from GoDaddy.com and hosted by a webserver technology called Tomcat.</p>
+        </div>
+
+        <div class="w3-third w3-center">
+            <i class="fa fa-futbol-o" style="font-size:250px;color:red"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+    <div class="w3-content">
+        <div class="w3-third w3-center">
+            <i class="fa fa-bar-chart" style="font-size:250px;color:red"></i>
+        </div>
+
+        <div class="w3-twothird">
+            <h1>Football Data</h1>
+            <h5 class="w3-padding-32">All the statistics and results are available to the user on this website. Information is up to date and sourced from reliable websites.</h5>
+
+            <p class="w3-text-grey">The user can access the site from any browser. This website gives a detailed look at the infromation from past fixtures. Gives the latest fixtures coming up for the rest of the 2017/18 season. Statistical data and the football prediction is outlined for the user for any fixture they choose from the list.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+    <div class="w3-xlarge w3-padding-32">
+    </div>
+    <h1>Football Results, Statistical Information and Historical Data</h1>
+    <p>Powered by <a href="http://www.football-data.co.uk/" target="_blank">Football Data</a></p>
+    <div class="w3-xlarge w3-padding-32">
+        <a href="https://www.linkedin.com/in/patrick-kelly-4107a2ba/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+        <a href="https://www.youtube.com/watch?v=aU9MqBK60jA&t=5s" target="_blank"><i class="fa fa-youtube-play w3-hover-opacity"></i></a>
+        <a href="https://github.com/PatrickKelly19" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
+    </div>
+
+    <script>
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+
+</body>
+</html>

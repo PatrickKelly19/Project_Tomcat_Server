@@ -3,10 +3,37 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="ProjectDemonstrationServlets:war exploded" />
+      <artifact name="Webpage" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="673e5528-fa6d-4219-9ff3-c1b7f38711e0" name="Default" comment="" />
+    <list default="true" id="673e5528-fa6d-4219-9ff3-c1b7f38711e0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/ArcDiagram.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/Image2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/favicon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/About.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/Fixtures.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/Football.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/Historical.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/Stats.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/Test.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/home.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/ProjectDemonstrationServlets_war.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/ProjectDemonstrationServlets_war_exploded.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ProjectDemonstrationServlets_war/ProjectDemonstrationServlets_war.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ProjectDemonstrationServlets_war/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ProjectDemonstrationServlets_war_exploded/Project.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ProjectDemonstrationServlets_war_exploded/WEB-INF/classes/Project.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ProjectDemonstrationServlets_war_exploded/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ProjectDemonstrationServlets_war_exploded/index.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ProjectDemonstrationServlets/Project.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Project.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Project.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectDemonstrationServlets.iml" afterPath="$PROJECT_DIR$/ProjectDemonstrationServlets.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +44,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Project.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Project.java">
+      <file leaf-file-name="Football.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Football.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+            <state relative-caret-position="294">
+              <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -29,11 +56,140 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Project.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out/artifacts/ProjectDemonstrationServlets_war_exploded/Project.html">
+      <file leaf-file-name="About.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/About.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="58">
+              <caret line="33" column="76" lean-forward="true" selection-start-line="33" selection-start-column="76" selection-end-line="33" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Fixtures.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/Fixtures.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="667">
+              <caret line="97" column="7" lean-forward="true" selection-start-line="97" selection-start-column="7" selection-end-line="97" selection-end-column="7" />
+              <folding>
+                <marker date="1524841458003" expanded="true" signature="1318:1426" ph="select Dateo... Fixtures" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Historical.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/Historical.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="591">
+              <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+              <folding>
+                <marker date="1524841225429" expanded="true" signature="1416:1489" ph="SELECT * FRO... PleaseWorkForEverything" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="552">
+              <caret line="38" column="41" lean-forward="false" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Stats.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/Stats.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="751">
+              <caret line="716" column="7" lean-forward="false" selection-start-line="716" selection-start-column="7" selection-end-line="716" selection-end-column="7" />
+              <folding>
+                <marker date="1524841321207" expanded="true" signature="3436:3579" ph="SELECT * FRO... LatestSeason" />
+                <marker date="1524841321207" expanded="true" signature="3641:3784" ph="SELECT * FRO... LatestSeason" />
+                <marker date="1524841321207" expanded="true" signature="3846:3941" ph="SELECT * FRO... LatestSeason" />
+                <marker date="1524841321207" expanded="true" signature="3846:4116" ph="SELECT * FRO... " />
+                <marker date="1524841321207" expanded="true" signature="4016:4116" ph="SELECT * FRO... HistoricalResults" />
+                <marker date="1524841321207" expanded="true" signature="4178:4298" ph="SELECT SUM(H... LatestSeason" />
+                <marker date="1524841321207" expanded="true" signature="4178:4498" ph="SELECT SUM(H... " />
+                <marker date="1524841321207" expanded="true" signature="4373:4498" ph="SELECT SUM(H... HistoricalResults" />
+                <marker date="1524841321207" expanded="true" signature="4560:4751" ph="SELECT HomeT... LatestSeason" />
+                <marker date="1524841321207" expanded="true" signature="4814:5010" ph="SELECT HomeT... HistoricalResults" />
+                <marker date="1524841321207" expanded="true" signature="5072:5263" ph="SELECT HomeT... LatestSeason" />
+                <marker date="1524841321207" expanded="true" signature="5072:5535" ph="SELECT HomeT... " />
+                <marker date="1524841321207" expanded="true" signature="5340:5535" ph="SELECT HomeT... HistoricalResults" />
+                <marker date="1524841321207" expanded="true" signature="5597:5692" ph="SELECT * FRO... LatestSeason" />
+                <marker date="1524841321207" expanded="true" signature="5597:6006" ph="SELECT * FRO... " />
+                <marker date="1524841321207" expanded="true" signature="5767:5913" ph="SELECT * FRO... HistoricalResults" />
+                <marker date="1524841321207" expanded="true" signature="6068:6184" ph="SELECT SUM(H... HistoricalResults" />
+                <marker date="1524841321207" expanded="true" signature="6247:6351" ph="SELECT SUM(H... HistoricalResults" />
+                <marker date="1524841321207" expanded="true" signature="6414:6518" ph="SELECT SUM(A... HistoricalResults" />
+                <marker date="1524841321207" expanded="true" signature="6581:6675" ph="SELECT HomeT... HistoricalResults" />
+                <marker date="1524841321207" expanded="true" signature="6738:6858" ph="SELECT HomeT... HistoricalResults" />
+                <marker date="1524841321207" expanded="true" signature="6920:7014" ph="SELECT HomeT... HistoricalResults" />
+                <marker date="1524841321207" expanded="true" signature="7077:7197" ph="SELECT HomeT... HistoricalResults" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Test.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/Test.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+              <folding>
+                <marker date="1524841321187" expanded="true" signature="3434:3577" ph="SELECT * FRO... LatestSeason" />
+                <marker date="1524841321187" expanded="true" signature="3639:3782" ph="SELECT * FRO... LatestSeason" />
+                <marker date="1524841321187" expanded="true" signature="3844:3939" ph="SELECT * FRO... LatestSeason" />
+                <marker date="1524841321187" expanded="true" signature="3844:4114" ph="SELECT * FRO... " />
+                <marker date="1524841321187" expanded="true" signature="4014:4114" ph="SELECT * FRO... HistoricalResults" />
+                <marker date="1524841321187" expanded="true" signature="4176:4296" ph="SELECT SUM(H... LatestSeason" />
+                <marker date="1524841321187" expanded="true" signature="4176:4496" ph="SELECT SUM(H... " />
+                <marker date="1524841321187" expanded="true" signature="4371:4496" ph="SELECT SUM(H... HistoricalResults" />
+                <marker date="1524841321187" expanded="true" signature="4558:4749" ph="SELECT HomeT... LatestSeason" />
+                <marker date="1524841321187" expanded="true" signature="4812:5008" ph="SELECT HomeT... HistoricalResults" />
+                <marker date="1524841321187" expanded="true" signature="5070:5261" ph="SELECT HomeT... LatestSeason" />
+                <marker date="1524841321187" expanded="true" signature="5070:5533" ph="SELECT HomeT... " />
+                <marker date="1524841321187" expanded="true" signature="5338:5533" ph="SELECT HomeT... HistoricalResults" />
+                <marker date="1524841321187" expanded="true" signature="5595:5690" ph="SELECT * FRO... LatestSeason" />
+                <marker date="1524841321187" expanded="true" signature="5595:6004" ph="SELECT * FRO... " />
+                <marker date="1524841321187" expanded="true" signature="5765:5911" ph="SELECT * FRO... HistoricalResults" />
+                <marker date="1524841321187" expanded="true" signature="6066:6182" ph="SELECT SUM(H... HistoricalResults" />
+                <marker date="1524841321187" expanded="true" signature="6245:6349" ph="SELECT SUM(H... HistoricalResults" />
+                <marker date="1524841321187" expanded="true" signature="6412:6516" ph="SELECT SUM(A... HistoricalResults" />
+                <marker date="1524841321187" expanded="true" signature="6579:6673" ph="SELECT HomeT... HistoricalResults" />
+                <marker date="1524841321187" expanded="true" signature="6736:6856" ph="SELECT HomeT... HistoricalResults" />
+                <marker date="1524841321187" expanded="true" signature="6918:7012" ph="SELECT HomeT... HistoricalResults" />
+                <marker date="1524841321187" expanded="true" signature="7075:7195" ph="SELECT HomeT... HistoricalResults" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArcDiagram.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/ArcDiagram.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Football.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/Football.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="87" lean-forward="false" selection-start-line="10" selection-start-column="87" selection-end-line="10" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -49,6 +205,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -58,8 +217,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/web/Project.html" />
-        <option value="$PROJECT_DIR$/src/Project.java" />
         <option value="$PROJECT_DIR$/out/artifacts/ProjectDemonstrationServlets_war_exploded/index.jsp" />
+        <option value="$PROJECT_DIR$/out/artifacts/ProjectDemonstrationServlets_war_exploded/Project.html" />
+        <option value="$PROJECT_DIR$/src/Project.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/web/About.html" />
+        <option value="$PROJECT_DIR$/web/Historical.jsp" />
+        <option value="$PROJECT_DIR$/web/Patrick.jsp" />
+        <option value="$PROJECT_DIR$/web/Stats.jsp" />
+        <option value="$PROJECT_DIR$/web/Fixtures.jsp" />
+        <option value="$PROJECT_DIR$/web/Football.html" />
+        <option value="$PROJECT_DIR$/web/home.html" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
       </list>
     </option>
@@ -78,8 +246,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="256" />
-    <option name="y" value="-26" />
+    <option name="x" value="-8" />
     <option name="width" value="976" />
     <option name="height" value="1038" />
   </component>
@@ -99,74 +266,52 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="ProjectDemonstrationServlets" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectDemonstrationServlets" type="462c0819:PsiDirectoryNode" />
+              <item name="Project_Tomcat_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project_Tomcat_Server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ProjectDemonstrationServlets" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectDemonstrationServlets" type="462c0819:PsiDirectoryNode" />
+              <item name="Project_Tomcat_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project_Tomcat_Server" type="462c0819:PsiDirectoryNode" />
               <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ProjectDemonstrationServlets" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectDemonstrationServlets" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectDemonstrationServlets" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectDemonstrationServlets" type="462c0819:PsiDirectoryNode" />
+              <item name="Project_Tomcat_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project_Tomcat_Server" type="462c0819:PsiDirectoryNode" />
               <item name="out" type="462c0819:PsiDirectoryNode" />
               <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="ProjectDemonstrationServlets_war" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ProjectDemonstrationServlets" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectDemonstrationServlets" type="462c0819:PsiDirectoryNode" />
+              <item name="Project_Tomcat_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project_Tomcat_Server" type="462c0819:PsiDirectoryNode" />
               <item name="out" type="462c0819:PsiDirectoryNode" />
               <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="ProjectDemonstrationServlets_war_exploded" type="462c0819:PsiDirectoryNode" />
+              <item name="Webpage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ProjectDemonstrationServlets" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectDemonstrationServlets" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectDemonstrationServlets" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectDemonstrationServlets" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="ProjectDemonstrationServlets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectDemonstrationServlets" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectDemonstrationServlets" type="462c0819:PsiDirectoryNode" />
+              <item name="Project_Tomcat_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project_Tomcat_Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ProjectDemonstrationServlets" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectDemonstrationServlets" type="462c0819:PsiDirectoryNode" />
+              <item name="Project_Tomcat_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project_Tomcat_Server" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ProjectDemonstrationServlets" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectDemonstrationServlets" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="Project_Tomcat_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -177,7 +322,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Patrick Kelly CSP Exam/CSP Exam Patrick Kelly" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/College/mysql-connector-java-5.1.44/mysql-connector-java-5.1.44/mysql-connector-java-5.1.44-bin.jar!/" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jkjke\Desktop\Project_Tomcat_Server\out\artifacts" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jkjke\Desktop\Project_Tomcat_Server\web" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -192,6 +348,20 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 7.0.82">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ProjectDemonstrationServlets" />
+      <envs />
+    </configuration>
     <configuration name="Tomcat 7.0.82" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.82" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="ProjectDemonstrationServlets:war exploded">
@@ -258,9 +428,7 @@
         </SHUTDOWN>
       </ConfigurationWrapper>
       <method>
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="ProjectDemonstrationServlets:war exploded" />
-        </option>
+        <option name="BuildArtifacts" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -344,6 +512,15 @@
       <properties />
       <listeners />
     </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7.0.82" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -365,40 +542,61 @@
       <workItem from="1517245661388" duration="2414000" />
       <workItem from="1517259155379" duration="2870000" />
       <workItem from="1517322809002" duration="1440000" />
+      <workItem from="1520874867776" duration="1750000" />
+      <workItem from="1521036613429" duration="2149000" />
+      <workItem from="1524840737172" duration="832000" />
     </task>
+    <task id="LOCAL-00001" summary="Debugging information from the db">
+      <created>1520875007092</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1520875007092</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20097000" />
+    <option name="totallyTimeSpent" value="24828000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33021078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1659506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32552692" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290398" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33021078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17400645" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938388" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -406,10 +604,8 @@
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,6 +614,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Debugging information from the db" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debugging information from the db" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -425,11 +625,25 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/ProjectDemonstrationServlets_war_exploded/Project.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -445,9 +659,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/ProjectDemonstrationServlets_war_exploded/Project.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/ProjectDemonstrationServlets_war_exploded/Project.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -462,7 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1134">
           <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -470,9 +713,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -487,7 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1134">
           <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -495,9 +735,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -512,7 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1134">
           <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -520,9 +757,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -530,7 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1134">
           <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -545,9 +779,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -562,7 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1134">
           <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -570,9 +801,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -587,7 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="43" lean-forward="false" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -595,9 +823,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -612,7 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="43" lean-forward="false" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -620,9 +845,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -637,7 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="43" lean-forward="false" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -645,15 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="45" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="45" lean-forward="false" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -673,19 +886,156 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/out/artifacts/ProjectDemonstrationServlets_war_exploded/Project.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="504">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        <state relative-caret-position="567">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Football.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/About.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="33" column="76" lean-forward="true" selection-start-line="33" selection-start-column="76" selection-end-line="33" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Fixtures.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="97" column="7" lean-forward="true" selection-start-line="97" selection-start-column="7" selection-end-line="97" selection-end-column="7" />
+          <folding>
+            <marker date="1524841458003" expanded="true" signature="1318:1426" ph="select Dateo... Fixtures" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Historical.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+          <folding>
+            <marker date="1524841225429" expanded="true" signature="1416:1489" ph="SELECT * FRO... PleaseWorkForEverything" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="38" column="41" lean-forward="false" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Stats.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="751">
+          <caret line="716" column="7" lean-forward="false" selection-start-line="716" selection-start-column="7" selection-end-line="716" selection-end-column="7" />
+          <folding>
+            <marker date="1524841321207" expanded="true" signature="3436:3579" ph="SELECT * FRO... LatestSeason" />
+            <marker date="1524841321207" expanded="true" signature="3641:3784" ph="SELECT * FRO... LatestSeason" />
+            <marker date="1524841321207" expanded="true" signature="3846:3941" ph="SELECT * FRO... LatestSeason" />
+            <marker date="1524841321207" expanded="true" signature="3846:4116" ph="SELECT * FRO... " />
+            <marker date="1524841321207" expanded="true" signature="4016:4116" ph="SELECT * FRO... HistoricalResults" />
+            <marker date="1524841321207" expanded="true" signature="4178:4298" ph="SELECT SUM(H... LatestSeason" />
+            <marker date="1524841321207" expanded="true" signature="4178:4498" ph="SELECT SUM(H... " />
+            <marker date="1524841321207" expanded="true" signature="4373:4498" ph="SELECT SUM(H... HistoricalResults" />
+            <marker date="1524841321207" expanded="true" signature="4560:4751" ph="SELECT HomeT... LatestSeason" />
+            <marker date="1524841321207" expanded="true" signature="4814:5010" ph="SELECT HomeT... HistoricalResults" />
+            <marker date="1524841321207" expanded="true" signature="5072:5263" ph="SELECT HomeT... LatestSeason" />
+            <marker date="1524841321207" expanded="true" signature="5072:5535" ph="SELECT HomeT... " />
+            <marker date="1524841321207" expanded="true" signature="5340:5535" ph="SELECT HomeT... HistoricalResults" />
+            <marker date="1524841321207" expanded="true" signature="5597:5692" ph="SELECT * FRO... LatestSeason" />
+            <marker date="1524841321207" expanded="true" signature="5597:6006" ph="SELECT * FRO... " />
+            <marker date="1524841321207" expanded="true" signature="5767:5913" ph="SELECT * FRO... HistoricalResults" />
+            <marker date="1524841321207" expanded="true" signature="6068:6184" ph="SELECT SUM(H... HistoricalResults" />
+            <marker date="1524841321207" expanded="true" signature="6247:6351" ph="SELECT SUM(H... HistoricalResults" />
+            <marker date="1524841321207" expanded="true" signature="6414:6518" ph="SELECT SUM(A... HistoricalResults" />
+            <marker date="1524841321207" expanded="true" signature="6581:6675" ph="SELECT HomeT... HistoricalResults" />
+            <marker date="1524841321207" expanded="true" signature="6738:6858" ph="SELECT HomeT... HistoricalResults" />
+            <marker date="1524841321207" expanded="true" signature="6920:7014" ph="SELECT HomeT... HistoricalResults" />
+            <marker date="1524841321207" expanded="true" signature="7077:7197" ph="SELECT HomeT... HistoricalResults" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Test.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+          <folding>
+            <marker date="1524841321187" expanded="true" signature="3434:3577" ph="SELECT * FRO... LatestSeason" />
+            <marker date="1524841321187" expanded="true" signature="3639:3782" ph="SELECT * FRO... LatestSeason" />
+            <marker date="1524841321187" expanded="true" signature="3844:3939" ph="SELECT * FRO... LatestSeason" />
+            <marker date="1524841321187" expanded="true" signature="3844:4114" ph="SELECT * FRO... " />
+            <marker date="1524841321187" expanded="true" signature="4014:4114" ph="SELECT * FRO... HistoricalResults" />
+            <marker date="1524841321187" expanded="true" signature="4176:4296" ph="SELECT SUM(H... LatestSeason" />
+            <marker date="1524841321187" expanded="true" signature="4176:4496" ph="SELECT SUM(H... " />
+            <marker date="1524841321187" expanded="true" signature="4371:4496" ph="SELECT SUM(H... HistoricalResults" />
+            <marker date="1524841321187" expanded="true" signature="4558:4749" ph="SELECT HomeT... LatestSeason" />
+            <marker date="1524841321187" expanded="true" signature="4812:5008" ph="SELECT HomeT... HistoricalResults" />
+            <marker date="1524841321187" expanded="true" signature="5070:5261" ph="SELECT HomeT... LatestSeason" />
+            <marker date="1524841321187" expanded="true" signature="5070:5533" ph="SELECT HomeT... " />
+            <marker date="1524841321187" expanded="true" signature="5338:5533" ph="SELECT HomeT... HistoricalResults" />
+            <marker date="1524841321187" expanded="true" signature="5595:5690" ph="SELECT * FRO... LatestSeason" />
+            <marker date="1524841321187" expanded="true" signature="5595:6004" ph="SELECT * FRO... " />
+            <marker date="1524841321187" expanded="true" signature="5765:5911" ph="SELECT * FRO... HistoricalResults" />
+            <marker date="1524841321187" expanded="true" signature="6066:6182" ph="SELECT SUM(H... HistoricalResults" />
+            <marker date="1524841321187" expanded="true" signature="6245:6349" ph="SELECT SUM(H... HistoricalResults" />
+            <marker date="1524841321187" expanded="true" signature="6412:6516" ph="SELECT SUM(A... HistoricalResults" />
+            <marker date="1524841321187" expanded="true" signature="6579:6673" ph="SELECT HomeT... HistoricalResults" />
+            <marker date="1524841321187" expanded="true" signature="6736:6856" ph="SELECT HomeT... HistoricalResults" />
+            <marker date="1524841321187" expanded="true" signature="6918:7012" ph="SELECT HomeT... HistoricalResults" />
+            <marker date="1524841321187" expanded="true" signature="7075:7195" ph="SELECT HomeT... HistoricalResults" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ArcDiagram.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Football.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="87" lean-forward="false" selection-start-line="10" selection-start-column="87" selection-end-line="10" selection-end-column="87" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -695,12 +1045,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>ProjectDemonstrationServlets:war</last-edited>
+          <last-edited>Webpage</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2291052" />
-                <option value="0.72389376" />
+                <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -720,6 +1070,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>canvasjs</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -1,1 +1,1 @@
-<% response.sendRedirect("/Project.html"); %>
+<% response.sendRedirect("http://35.193.184.35/Webpage/home.html"); %>
