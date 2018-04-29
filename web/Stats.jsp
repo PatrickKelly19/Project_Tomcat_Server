@@ -74,22 +74,26 @@
                     Statement stmt = connection.createStatement();
                     String sqlStr;
 
-                    PreparedStatement read, read1, read2, read3, read4, read4a, read5, read6, read7, read7a, read7b, read7c, read7d, read8, read8a;
+                    PreparedStatement read, read1, read2, read3, read4, read4a, read5, read6, read7, read7a, read7b, read7c, read7d, read8, read8a,
+                            read9,read9a,read9b,read9c,read9d,read9e,read9f, noOfGames1718;
 
                     DecimalFormat df2 = new DecimalFormat(".##");
 
                     int noofgames = 0, noOfHomeGames = 0, noOfAwayGames = 0;
+                    int countRows1Home = 0, countRows2Home = 0, countRows3Home = 0, countRows4Home = 0;
                     String team1="", team2="";
                     int sum = 0;
-                    int sum1 = 0, sum1a = 0, sum2 = 0, sum2a = 0, sum3 = 0, sum4 = 0, goals_1617 = 0, goalsHome_1617 = 0, goalsAway_1617 = 0, goalsSurname = 0, goalsName = 0;
+                    int sum1 = 0, sum1a = 0, sum2 = 0, sum2a = 0, sum3 = 0, sum4 = 0, goals_1617 = 0, goalsHome_1617 = 0, goalsAway_1617 = 0, goalsSurname = 0, goalsName = 0, goals_1718 = 0, goalsHome_1718 = 0, goalsAway_1718 = 0, goalsSurname1718 = 0, goalsName1718 = 0;
                     String str = "", str1 = "", str2 = "", str3 = "", str4 = "";
-                    int goals = 0, goals1 = 0;
+                    int goals = 0, goals1 = 0, goals1718 = 0, goals1718_1 = 0;
                     String team3 = "", team3a = "", team4 = "", team5 = "", team6 = "";
                     int amountOfCleanSheetsName = 0;
                     double pie1 = 0.0;
                     int amountOfCleanSheetsSurName = 0;
                     double avgNumberLastSeason = 0.0, avgNumberLastSeasonHome = 0.0, avgNumberLastSeasonAway = 0;
-                    ResultSet rset ,rset1, rset2, rset3, rset4, rset4a, rset5, rset6, rset7, rset7a, rset7b, rset7c, rset7d, rset8, rset8a;
+                    double avgNumberThisSeason = 0.0, avgNumberThisSeasonHome = 0.0, avgNumberThisSeasonAway = 0;
+                    ResultSet rset ,rset1, rset2, rset3, rset4, rset4a, rset5, rset6, rset7, rset7a, rset7b, rset7c, rset7d, rset8, rset8a,rset9,rset9a,
+                            rset9b,rset9c,rset9d,rset9e,rset9f, rsetnoOfGames1718;
 
                     read = connection.prepareStatement("SELECT * FROM LatestSeason WHERE HomeTeam = ? OR AwayTeam = ? ORDER BY id DESC                                                          LIMIT 5");
 
@@ -138,6 +142,20 @@
                     read8 = connection.prepareStatement("SELECT HomeTeam, SUM(HomeScore) FROM HistoricalResults WHERE HomeTeam = ? GROUP BY id LIMIT 19");
 
                     read8a = connection.prepareStatement("SELECT HomeTeam, AwayTeam, SUM(HomeScore), SUM(AwayScore) FROM HistoricalResults WHERE AwayTeam = ? GROUP BY id LIMIT 19");
+
+                    read9 = connection.prepareStatement("SELECT SUM(HomeScore + AwayScore) , COUNT(*) FROM LatestSeason");
+
+                    read9a = connection.prepareStatement("SELECT  SUM(HomeScore), COUNT(*) FROM LatestSeason");
+
+                    read9b = connection.prepareStatement("SELECT  SUM(AwayScore), COUNT(*) FROM LatestSeason");
+
+                    read9c = connection.prepareStatement("SELECT HomeTeam, SUM(HomeScore), COUNT(*) FROM LatestSeason WHERE HomeTeam = ?");
+
+                    read9d = connection.prepareStatement("SELECT HomeTeam, AwayTeam, SUM(HomeScore), SUM(AwayScore), COUNT(*) FROM LatestSeason WHERE AwayTeam = ? GROUP BY id");
+
+                    read9e = connection.prepareStatement("SELECT HomeTeam, SUM(HomeScore), COUNT(*) FROM LatestSeason WHERE HomeTeam = ? GROUP BY id");
+
+                    read9f = connection.prepareStatement("SELECT HomeTeam, AwayTeam, SUM(HomeScore), SUM(AwayScore), COUNT(*) FROM LatestSeason WHERE AwayTeam = ? GROUP BY id");
 
                     read.setString(1,name);
                     read.setString(2,name);
@@ -197,6 +215,12 @@
                     read8.setString(1,surname);
                     read8a.setString(1,name);
 
+                    read9c.setString(1,name);
+                    read9d.setString(1,surname);
+
+                    read9e.setString(1,surname);
+                    read9f.setString(1,name);
+
                     rset = read.executeQuery();
                     rset1 = read1.executeQuery();
                     rset2 = read2.executeQuery();
@@ -212,8 +236,16 @@
                     rset7d = read7d.executeQuery();
                     rset8 = read8.executeQuery();
                     rset8a = read8a.executeQuery();
+                    rset9 = read9.executeQuery();
+                    rset9a = read9a.executeQuery();
+                    rset9b = read9b.executeQuery();
+                    rset9c = read9c.executeQuery();
+                    rset9d = read9d.executeQuery();
+                    rset9e = read9e.executeQuery();
+                    rset9f = read9f.executeQuery();
 
                     out.println("<div class=\"a\">");
+                    out.println("<img src=\"Liverpool.png\" alt=\"Angry face\" width=\"32\" height=\"32\" />");
                     out.println("<h1>"+name+"'s Last 5 Results</h1>");
                     out.println("</div>");
                     out.println("<table border = \"1\" width = \"100%\">\n" +
@@ -235,6 +267,7 @@
                     out.println("</table>");
 
                     out.println("<div class=\"a\">");
+                    out.println("<img src= \"<?= $surname ?>\" alt=\"test\"/>");
                     out.println("<h1>"+surname+"'s Last 5 Results</h1>");
                     out.println("</div>");
                     out.println("<table border = \"1\" width = \"100%\">\n" +
@@ -283,7 +316,7 @@
                     }
 
                     out.println("<div class=\"a\">");
-                    out.println("<h1>Lastest fixtures between these teams</h1>");
+                    out.println("<h1>Lastest Fixtures Between "+name+" and "+surname+"</h1>");
                     out.println("</div>");
                     out.println("<table border = \"1\" width = \"100%\">\n" +
                             "    <tr>\n" +
@@ -357,6 +390,64 @@
                         goalsName = goalsName + c;
                     }
 
+                    while (rset9.next()){
+
+                        int c = rset9.getInt(1);
+                        int getRows = rset9.getInt(2);
+                        goals_1718 = goals_1718 + c;
+
+                        avgNumberThisSeason = goals_1718/(double)getRows;
+                    }
+
+                    while (rset9a.next()){
+
+                        int c = rset9a.getInt(1);
+                        int getRows = rset9a.getInt(2);
+                        goalsHome_1718 = goalsHome_1718 + c;
+
+                        avgNumberThisSeasonHome = goalsHome_1718/(double)getRows;
+                    }
+
+                    while (rset9b.next()){
+
+                        int c = rset9b.getInt(1);
+                        int getRows = rset9b.getInt(2);
+                        goalsAway_1718 = goalsAway_1718 + c;
+
+                        avgNumberThisSeasonAway = goalsAway_1718/(double)getRows;
+                    }
+
+                    while (rset9c.next()){
+
+                        int c = rset9c.getInt(2);
+                        countRows1Home = rset9c.getInt(3);
+                        goals1718 = goals1718 + c;
+                    }
+
+                    while (rset9d.next()){
+
+                        int c = rset9d.getInt(3);
+                        int countRows2 = rset9d.getInt(5);
+                        countRows2Home = countRows2Home+countRows2;
+                        goals1718_1 = goals1718_1 + c;
+                    }
+
+                    while (rset9e.next()){
+
+                        int c = rset9e.getInt(2);
+                        int countRows3 = rset9e.getInt(3);
+                        countRows3Home = countRows3Home+countRows3;
+                        goalsSurname1718 = goalsSurname1718 + c;
+                    }
+
+                    while (rset9f.next()){
+
+                        int c = rset9f.getInt(3);
+                        int countRows4 = rset9f.getInt(5);
+                        countRows4Home = countRows4Home+countRows4;
+                        goalsName1718 = goalsName1718 + c;
+                    }
+
                     while (rset4.next()){
 
                         team3 = rset4.getString("HomeTeam");
@@ -411,6 +502,7 @@
                     double totalAvg1 = totalGoals1 / (double)noofgames;
                     double totalAvg2 = totalGoals2 / (double)noofgames;
 
+                    /* This is to do with 2016/17 season*/
                     double concededavgLastSeasonHome = avgNumberLastSeasonAway;
                     double concededavgLastSeasonAway = avgNumberLastSeasonHome;
 
@@ -427,32 +519,12 @@
                     double teamDefenceStrengthName = result3/concededavgLastSeasonAway;
 
                     double predictedGoal = teamAttackStrength*teamDefenceStrength*avgNumberLastSeasonHome;
-                    //System.out.println(name+": "+predictedGoal);
-                    //double ressie = Math.round(predictedGoal);
-
                     double predictedGoal1 = teamAttackStrengthSurname*teamDefenceStrengthName*avgNumberLastSeasonAway;
-                    //System.out.println(surname+": "+predictedGoal1);
-                    //double ressie2 = Math.round(predictedGoal1);
 
-                    //System.out.println(name+":"+(int)ressie+" "+surname+":"+(int)ressie2);
-
-                    System.out.println("Team1: "+predictedGoal);
-                    System.out.println("Team2: "+predictedGoal1);
-
-//                    double calco1 = 0.0;
-//                    double calc = Math.pow(predictedGoal,0);
-//                    predictedGoal = -predictedGoal;
-//                    double exp = Math.exp(predictedGoal);
-//                    double ca1l = calc*exp;
-//                    double calco = ca1l/1;
-//                    calco1 = calco*100;
-                    //double calco1 = 0.0;
                     double fact=1;
                     double fact1=1;
                     List<Double> list = new ArrayList<Double>();
                     List<Double> list1 = new ArrayList<Double>();
-                    double biggest = 0;
-                    double maxAt = 0;
 
                     for (double i = 0; i <=5; i++) {
                         fact = fact * i;
@@ -466,7 +538,6 @@
                         double calco = sn / fact;
                         double calco1 = calco * 100;
                         list.add(calco1);
-                        System.out.println(name+"'s probability of scoring "+i+" goals: "+df2.format(calco1)+"%");
                     }
 
                     for (double i = 0; i <=5; i++) {
@@ -481,18 +552,94 @@
                         double calco1 = sn1/fact1;
                         double calco2 = calco1*100;
                         list1.add(calco2);
-                        System.out.println(surname+"'s probability of scoring "+i+" goals: "+df2.format(calco2)+"%");
                     }
 
                     double obj = Collections.max(list);
                     double obj1 = Collections.max(list1);
                     int index = list.indexOf(obj);
                     int index1 = list1.indexOf(obj1);
+                    System.out.println("Goals1617 Home: "+index);
+                    System.out.println("Goals1617 Away: "+index1);
+                    double concededavgThisSeasonHome = avgNumberThisSeasonAway;
+                    double concededavgThisSeasonAway = avgNumberThisSeasonHome;
+
+                    double resultThisSeason = (double)goals1718/countRows1Home;
+                    double teamAttackStrengthThisSeason = resultThisSeason/avgNumberThisSeasonHome;
+
+                    double resultThisSeason1 = (double)goals1718_1/countRows2Home;
+                    double teamDefenceStrengthThisSeason = resultThisSeason1/concededavgThisSeasonAway;
+
+                    double result2ThisSeason = (double)goalsSurname1718/countRows3Home;
+                    double teamAttackStrengthSurnameThisSeason = result2ThisSeason/avgNumberThisSeasonAway;
+
+                    double result3ThisSeason = (double)goalsName1718/countRows4Home;
+                    double teamDefenceStrengthNameThisSeason = result3ThisSeason/concededavgThisSeasonAway;
+
+                    double predictedGoalThisSeason = teamAttackStrengthThisSeason*teamDefenceStrengthThisSeason*avgNumberThisSeasonHome;
+                    double predictedGoal1ThisSeason = teamAttackStrengthSurnameThisSeason*teamDefenceStrengthNameThisSeason*avgNumberThisSeasonAway;
+
+                    double fact12=1;
+                    double fact13=1;
+                    List<Double> list12 = new ArrayList<Double>();
+                    List<Double> list13 = new ArrayList<Double>();
+
+                    for (double i = 0; i <=5; i++) {
+                        fact12 = fact12 * i;
+                        if(fact12==0)
+                        {
+                            fact12 = fact12 + 1;
+                        }
+                        double calc = Math.pow(predictedGoalThisSeason, i);
+                        double exp1 = Math.exp(-predictedGoalThisSeason);
+                        double sn = calc * exp1;
+                        double calco = sn / fact12;
+                        double calco1 = calco * 100;
+                        list12.add(calco1);
+                    }
+
+                    for (double i = 0; i <=5; i++) {
+                        fact13=fact13*i;
+                        if(fact13==0)
+                        {
+                            fact13 = fact13 + 1;
+                        }
+                        double calc1 = Math.pow(predictedGoal1ThisSeason,i);
+                        double exp2 = Math.exp(-predictedGoal1ThisSeason);
+                        double sn1 = calc1*exp2;
+                        double calco1 = sn1/fact13;
+                        double calco2 = calco1*100;
+                        list13.add(calco2);
+                    }
+
+                    double obj12 = Collections.max(list12);
+                    double obj13 = Collections.max(list13);
+                    int index12 = list12.indexOf(obj12);
+                    int index13 = list13.indexOf(obj13);
+
+                    int actualResult = (index+index12)/2;
+                    int actualResult1 = (index1+index13)/2;
 
         %>
         <div class="a">
             <h1>
-                <%="Other Statistics Of Note"%>
+                <%="Prediction For "+name+" Against "+surname%>
+            </h1>
+        </div>
+        <table>
+            <tr>
+                <th>Statistic</th>
+                <th><%=name%></th>
+                <th><%=surname%></th>
+            </tr>
+            <tr>
+                <td>Predicted Result</td>
+                <th><%=actualResult%></th>
+                <th><%=actualResult1%></th>
+        </table>
+
+        <div class="a">
+            <h1>
+                <%="Overall Statistics For "+name+" Against "+surname%>
             </h1>
         </div>
         <table>
@@ -501,22 +648,22 @@
                 <th>Value</th>
             </tr>
             <tr>
-                <td>Number of Goals For Fixture</td>
+                <td>Total Number of Goals</td>
                 <td><%=sum%></td>
             </tr>
             <tr>
-                <td>Number of Games For Fixture</td>
+                <td>Total Number of Games</td>
                 <td><%=noofgames%></td>
             </tr>
             <tr>
-                <td>Avg Amount of Goals Per Game</td>
+                <td>Total Avg Amount of Goals Per Game</td>
                 <td><%=df2.format(totalAvg)%></td>
             </tr>
         </table>
 
         <div class="a">
             <h1>
-                <%="Premier League Statistics"%>
+                <%="Premier League Statistics For 2017/18 Season"%>
             </h1>
         </div>
         <table>
@@ -525,15 +672,75 @@
                 <th>Value</th>
             </tr>
             <tr>
-                <td>Total Amount of goals 2016/17</td>
+                <td>Total Amount of Goals 2017/18</td>
+                <td><%=goals_1718%></td>
+            </tr>
+            <tr>
+                <td>Total Amount of Home Goals 2017/18</td>
+                <td><%=goalsHome_1718%></td>
+            </tr>
+            <tr>
+                <td>Total Amount of Away Goals 2017/18</td>
+                <td><%=goalsAway_1718%></td>
+            </tr>
+            <tr>
+                <td>Average Number of Goals Scored In Total 2017/18</td>
+                <td><%=df2.format(avgNumberThisSeason)%></td>
+            </tr>
+            <tr>
+                <td>Average Number of Goals Scored Home 2017/18</td>
+                <td><%=df2.format(avgNumberThisSeasonHome)%></td>
+            </tr>
+            <tr>
+                <td>Average Number of Goals Scored Away 2017/18</td>
+                <td><%=df2.format(avgNumberThisSeasonAway)%></td>
+            </tr>
+            <tr>
+                <td>Average Number of Goals Conceded Home 2017/18</td>
+                <td><%=df2.format(concededavgThisSeasonHome)%></td>
+            </tr>
+            <tr>
+                <td>Average Number of Goals Conceded Away 2017/18</td>
+                <td><%=df2.format(concededavgThisSeasonAway)%></td>
+            </tr>
+            <tr>
+                <td><%=name%> Goals Scored at Home This Season</td>
+                <td><%=goals1718%></td>
+            </tr>
+            <tr>
+                <td><%=surname%> Goals Conceded Away from home This Season</td>
+                <td><%=goals1718_1%></td>
+            </tr>
+            <tr>
+                <td><%=name%> Attack Strength This Season</td>
+                <td><%=df2.format(teamAttackStrengthSurnameThisSeason)%></td>
+            </tr>
+            <tr>
+                <td><%=surname%> Defence Strength This Season</td>
+                <td><%=df2.format(teamDefenceStrengthNameThisSeason)%></td>
+            </tr>
+        </table>
+
+        <div class="a">
+            <h1>
+                <%="Premier League Statistics For 2016/17 Season"%>
+            </h1>
+        </div>
+        <table>
+            <tr>
+                <th>Statistic</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Total Amount of Goals 2016/17</td>
                 <td><%=goals_1617%></td>
             </tr>
             <tr>
-                <td>Total Amount of home goals 2016/17</td>
+                <td>Total Amount of Home Goals 2016/17</td>
                 <td><%=goalsHome_1617%></td>
             </tr>
             <tr>
-                <td>Total Amount of away goals 2016/17</td>
+                <td>Total Amount of Away Goals 2016/17</td>
                 <td><%=goalsAway_1617%></td>
             </tr>
             <tr>
@@ -557,15 +764,15 @@
                 <td><%=df2.format(concededavgLastSeasonAway)%></td>
             </tr>
             <tr>
-                <td><%=name%> goals scored at home last season</td>
+                <td><%=name%> Goals Scored at Home Last Season</td>
                 <td><%=goals%></td>
             </tr>
             <tr>
-                <td><%=surname%> goals conceded away from home last season</td>
+                <td><%=surname%> Goals Conceded Away From Home Last Season</td>
                 <td><%=goals1%></td>
             </tr>
             <tr>
-                <td><%=name%> Attack strength Last Season</td>
+                <td><%=name%> Attack Strength Last Season</td>
                 <td><%=df2.format(teamAttackStrength)%></td>
             </tr>
             <tr>
@@ -576,7 +783,7 @@
 
         <div class="a">
             <h1>
-                <%="Statistics Between Both Teams"%>
+                <%="Statistics Between "+name+" and "+surname%>
             </h1>
         </div>
         <table>
@@ -614,20 +821,9 @@
 
         <div class="a">
             <h1>
-                <%="Prediction of Fixture"%>
+                <%="Chart Representation of Fixture"%>
             </h1>
         </div>
-        <table>
-            <tr>
-                <th>Statistic</th>
-                <th><%=name%></th>
-                <th><%=surname%></th>
-            </tr>
-            <tr>
-                <td>Predicted Result</td>
-                <th><%=index%></th>
-                <th><%=index1%></th>
-        </table>
 
         <table class="columns">
             <tr>
