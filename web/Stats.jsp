@@ -81,19 +81,18 @@
 
                     int noofgames = 0, noOfHomeGames = 0, noOfAwayGames = 0;
                     int countRows1Home = 0, countRows2Home = 0, countRows3Home = 0, countRows4Home = 0;
-                    String team1="", team2="";
                     int sum = 0;
-                    int sum1 = 0, sum1a = 0, sum2 = 0, sum2a = 0, sum3 = 0, sum4 = 0, goals_1617 = 0, goalsHome_1617 = 0, goalsAway_1617 = 0, goalsSurname = 0, goalsName = 0, goals_1718 = 0, goalsHome_1718 = 0, goalsAway_1718 = 0, goalsSurname1718 = 0, goalsName1718 = 0;
-                    String str = "", str1 = "", str2 = "", str3 = "", str4 = "";
+                    int sum1 = 0, sum1a = 0, sum2 = 0, sum2a = 0, sum3 = 0, sum4 = 0, goals_1617 = 0, goalsHome_1617 = 0, goalsAway_1617 = 0,
+                            goalsSurname = 0, goalsName = 0, goals_1718 = 0, goalsHome_1718 = 0, goalsAway_1718 = 0, goalsSurname1718 = 0, goalsName1718 = 0;
                     int goals = 0, goals1 = 0, goals1718 = 0, goals1718_1 = 0;
-                    String team3 = "", team3a = "", team4 = "", team5 = "", team6 = "";
+                    String team3 = "", team3a = "", team4 = "";
+                    int draws = 0, nameWins = 0, surnameWins = 0;
                     int amountOfCleanSheetsName = 0;
-                    double pie1 = 0.0;
                     int amountOfCleanSheetsSurName = 0;
                     double avgNumberLastSeason = 0.0, avgNumberLastSeasonHome = 0.0, avgNumberLastSeasonAway = 0;
                     double avgNumberThisSeason = 0.0, avgNumberThisSeasonHome = 0.0, avgNumberThisSeasonAway = 0;
                     ResultSet rset ,rset1, rset2, rset3, rset4, rset4a, rset5, rset6, rset7, rset7a, rset7b, rset7c, rset7d, rset8, rset8a,rset9,rset9a,
-                            rset9b,rset9c,rset9d,rset9e,rset9f, rsetnoOfGames1718;
+                            rset9b,rset9c,rset9d,rset9e,rset9f;
 
                     read = connection.prepareStatement("SELECT * FROM LatestSeason WHERE HomeTeam = ? OR AwayTeam = ? ORDER BY id DESC                                                          LIMIT 5");
 
@@ -245,8 +244,10 @@
                     rset9f = read9f.executeQuery();
 
                     out.println("<div class=\"a\">");
-                    out.println("<img src=\"Liverpool.png\" alt=\"Angry face\" width=\"32\" height=\"32\" />");
-                    out.println("<h1>"+name+"'s Last 5 Results</h1>");
+                    out.println("<h1>");
+                    out.println("<IMG SRC=\"/images/"+name+".png\"height=\"42\" width=\"42\">");
+                    out.println(name+"'s Last 5 Results");
+                    out.println("</h1>");
                     out.println("</div>");
                     out.println("<table border = \"1\" width = \"100%\">\n" +
                             "    <tr>\n" +
@@ -256,6 +257,7 @@
                             "        <th>Away Score</th>\n" +
                             "        <th>Winner</th>\n" +
                             "</tr>");
+                    out.println("Recent Form: ");
                     while (rset.next()){
                         out.println("<td>"+rset.getString("HomeTeam")+"</td>");
                         out.println("<td>"+rset.getString("AwayTeam")+"</td>");
@@ -263,12 +265,27 @@
                         out.println("<td>"+rset.getInt("AwayScore")+"</td>");
                         out.println("<td>"+rset.getString("Winner")+"</td>");
                         out.println("</tr>");
+
+                        String form = rset.getString("Winner");
+
+                        if(form.equals(name)){
+                            out.println("<font color=\"lime\">W</font>");
+                        }
+                        else if(form.equals("Draw")){
+                            out.println("<font color=\"orange\">D</font>");
+                        }
+                        else
+                        {
+                            out.println("<font color=\"red\">L</font>");
+                        }
                     }
                     out.println("</table>");
 
                     out.println("<div class=\"a\">");
-                    out.println("<img src= \"<?= $surname ?>\" alt=\"test\"/>");
-                    out.println("<h1>"+surname+"'s Last 5 Results</h1>");
+                    out.println("<h1>");
+                    out.println("<IMG SRC=\"/images/"+surname+".png\"height=\"42\" width=\"42\">");
+                    out.println(surname+"'s Last 5 Results");
+                    out.println("</h1>");
                     out.println("</div>");
                     out.println("<table border = \"1\" width = \"100%\">\n" +
                             "    <tr>\n" +
@@ -278,6 +295,7 @@
                             "        <th>Away Score</th>\n" +
                             "        <th>Winner</th>\n" +
                             "</tr>");
+                    out.println("Recent Form: ");
                     while (rset1.next()){
                         out.println("<td>"+rset1.getString("HomeTeam")+"</td>");
                         out.println("<td>"+rset1.getString("AwayTeam")+"</td>");
@@ -285,6 +303,19 @@
                         out.println("<td>"+rset1.getInt("AwayScore")+"</td>");
                         out.println("<td>"+rset1.getString("Winner")+"</td>");
                         out.println("</tr>");
+
+                        String form1 = rset1.getString("Winner");
+
+                        if(form1.equals(surname)){
+                            out.println("<font color=\"lime\">W</font>");
+                        }
+                        else if(form1.equals("Draw")){
+                            out.println("<font color=\"orange\">D</font>");
+                        }
+                        else
+                        {
+                            out.println("<font color=\"red\">L</font>");
+                        }
                     }
                     out.println("</table>");
 
@@ -297,6 +328,19 @@
                         int count2 = rset2.getInt("AwayScore");
 
                         noofgames++;
+
+                        String result = rset2.getString("Winner");
+
+                        if(result.equals(name)){
+                            nameWins++;
+                        }
+                        else if(result.equals(surname)){
+                            surnameWins++;
+                        }
+                        else
+                        {
+                            draws++;
+                        }
 
                         if(Objects.equals(home1, name)){
                             noOfHomeGames++;
@@ -526,6 +570,29 @@
                     List<Double> list = new ArrayList<Double>();
                     List<Double> list1 = new ArrayList<Double>();
 
+                    double concededavgThisSeasonHome = avgNumberThisSeasonAway;
+                    double concededavgThisSeasonAway = avgNumberThisSeasonHome;
+
+                    double resultThisSeason = (double)goals1718/countRows1Home;
+                    double teamAttackStrengthThisSeason = resultThisSeason/avgNumberThisSeasonHome;
+
+                    double resultThisSeason1 = (double)goals1718_1/countRows2Home;
+                    double teamDefenceStrengthThisSeason = resultThisSeason1/concededavgThisSeasonAway;
+
+                    double result2ThisSeason = (double)goalsSurname1718/countRows3Home;
+                    double teamAttackStrengthSurnameThisSeason = result2ThisSeason/avgNumberThisSeasonAway;
+
+                    double result3ThisSeason = (double)goalsName1718/countRows4Home;
+                    double teamDefenceStrengthNameThisSeason = result3ThisSeason/concededavgThisSeasonAway;
+
+                    double predictedGoalThisSeason = teamAttackStrengthThisSeason*teamDefenceStrengthThisSeason*avgNumberThisSeasonHome;
+                    double predictedGoal1ThisSeason = teamAttackStrengthSurnameThisSeason*teamDefenceStrengthNameThisSeason*avgNumberThisSeasonAway;
+
+                    double fact12=1;
+                    double fact13=1;
+                    List<Double> list12 = new ArrayList<Double>();
+                    List<Double> list13 = new ArrayList<Double>();
+
                     for (double i = 0; i <=5; i++) {
                         fact = fact * i;
                         if(fact==0)
@@ -560,28 +627,6 @@
                     int index1 = list1.indexOf(obj1);
                     System.out.println("Goals1617 Home: "+index);
                     System.out.println("Goals1617 Away: "+index1);
-                    double concededavgThisSeasonHome = avgNumberThisSeasonAway;
-                    double concededavgThisSeasonAway = avgNumberThisSeasonHome;
-
-                    double resultThisSeason = (double)goals1718/countRows1Home;
-                    double teamAttackStrengthThisSeason = resultThisSeason/avgNumberThisSeasonHome;
-
-                    double resultThisSeason1 = (double)goals1718_1/countRows2Home;
-                    double teamDefenceStrengthThisSeason = resultThisSeason1/concededavgThisSeasonAway;
-
-                    double result2ThisSeason = (double)goalsSurname1718/countRows3Home;
-                    double teamAttackStrengthSurnameThisSeason = result2ThisSeason/avgNumberThisSeasonAway;
-
-                    double result3ThisSeason = (double)goalsName1718/countRows4Home;
-                    double teamDefenceStrengthNameThisSeason = result3ThisSeason/concededavgThisSeasonAway;
-
-                    double predictedGoalThisSeason = teamAttackStrengthThisSeason*teamDefenceStrengthThisSeason*avgNumberThisSeasonHome;
-                    double predictedGoal1ThisSeason = teamAttackStrengthSurnameThisSeason*teamDefenceStrengthNameThisSeason*avgNumberThisSeasonAway;
-
-                    double fact12=1;
-                    double fact13=1;
-                    List<Double> list12 = new ArrayList<Double>();
-                    List<Double> list13 = new ArrayList<Double>();
 
                     for (double i = 0; i <=5; i++) {
                         fact12 = fact12 * i;
@@ -622,10 +667,10 @@
         %>
         <div class="a">
             <h1>
-                <%="Prediction For "+name+" Against "+surname%>
+                <b><u><%="Prediction For "+name+" Against "+surname%></u></b>
             </h1>
         </div>
-        <table>
+        <table style="border:4px solid red;">
             <tr>
                 <th>Statistic</th>
                 <th><%=name%></th>
@@ -635,6 +680,44 @@
                 <td>Predicted Result</td>
                 <th><%=actualResult%></th>
                 <th><%=actualResult1%></th>
+        </table>
+
+        <div class="a">
+            <h1>
+                <%="Statistics Between "+name+" and "+surname%>
+            </h1>
+        </div>
+        <table>
+            <tr>
+                <th>Statistic</th>
+                <th><%=name%></th>
+                <th><%=surname%></th>
+            </tr>
+            <tr>
+                <td>Clean Sheets</td>
+                <td><%=amountOfCleanSheetsName%></td>
+                <td><%=amountOfCleanSheetsSurName%></td>
+            </tr>
+            <tr>
+                <td>Avg Amount of Goals Per Game</td>
+                <td><%=df2.format(totalAvg1)%></td>
+                <td><%=df2.format(totalAvg2)%></td>
+            </tr>
+            <tr>
+                <td>Total Amount of Goals Against Opponent</td>
+                <td><%=totalGoals1%></td>
+                <td><%=totalGoals2%></td>
+            </tr>
+            <tr>
+                <td>Total Home Goals Against Opponent</td>
+                <td><%=score1%></td>
+                <td><%=score2%></td>
+            </tr>
+            <tr>
+                <td>Total Away Goals Against Opponent</td>
+                <td><%=sum3%></td>
+                <td><%=sum4%></td>
+            </tr>
         </table>
 
         <div class="a">
@@ -659,10 +742,23 @@
                 <td>Total Avg Amount of Goals Per Game</td>
                 <td><%=df2.format(totalAvg)%></td>
             </tr>
+            <tr>
+                <td>Total Number of Draws</td>
+                <td><%=draws%></td>
+            </tr>
+            <tr>
+                <td><%=name%> Total Wins</td>
+                <td><%=nameWins%></td>
+            </tr>
+            <tr>
+                <td><%=surname%> Total Wins</td>
+                <td><%=surnameWins%></td>
+            </tr>
         </table>
 
         <div class="a">
             <h1>
+                <img src="/images/PremierLeague.png" style="width:60px;height:30px;" />
                 <%="Premier League Statistics For 2017/18 Season"%>
             </h1>
         </div>
@@ -708,21 +804,22 @@
                 <td><%=goals1718%></td>
             </tr>
             <tr>
-                <td><%=surname%> Goals Conceded Away from home This Season</td>
+                <td><%=surname%> Goals Conceded Away From Home This Season</td>
                 <td><%=goals1718_1%></td>
             </tr>
             <tr>
-                <td><%=name%> Attack Strength This Season</td>
-                <td><%=df2.format(teamAttackStrengthSurnameThisSeason)%></td>
+                <td><%=surname%> Goals Scored at Home This Season</td>
+                <td><%=goalsSurname1718%></td>
             </tr>
             <tr>
-                <td><%=surname%> Defence Strength This Season</td>
-                <td><%=df2.format(teamDefenceStrengthNameThisSeason)%></td>
+                <td><%=name%> Goals Conceded Away From Home This Season</td>
+                <td><%=goalsName1718%></td>
             </tr>
         </table>
 
         <div class="a">
             <h1>
+                <img src="/images/PremierLeague.png" style="width:60px;height:30px;" />
                 <%="Premier League Statistics For 2016/17 Season"%>
             </h1>
         </div>
@@ -772,50 +869,12 @@
                 <td><%=goals1%></td>
             </tr>
             <tr>
-                <td><%=name%> Attack Strength Last Season</td>
-                <td><%=df2.format(teamAttackStrength)%></td>
+                <td><%=surname%> Goals Scored at Home Last Season</td>
+                <td><%=goalsSurname%></td>
             </tr>
             <tr>
-                <td><%=surname%> Defence Strength Last Season</td>
-                <td><%=df2.format(teamDefenceStrength)%></td>
-            </tr>
-        </table>
-
-        <div class="a">
-            <h1>
-                <%="Statistics Between "+name+" and "+surname%>
-            </h1>
-        </div>
-        <table>
-            <tr>
-                <th>Statistic</th>
-                <th><%=name%></th>
-                <th><%=surname%></th>
-            </tr>
-            <tr>
-                <td>Clean Sheets</td>
-                <td><%=amountOfCleanSheetsName%></td>
-                <td><%=amountOfCleanSheetsSurName%></td>
-            </tr>
-            <tr>
-                <td>Avg Amount of Goals Per Game</td>
-                <td><%=df2.format(totalAvg1)%></td>
-                <td><%=df2.format(totalAvg2)%></td>
-            </tr>
-            <tr>
-                <td>Total Amount of Goals Against Opponent</td>
-                <td><%=totalGoals1%></td>
-                <td><%=totalGoals2%></td>
-            </tr>
-            <tr>
-                <td>Total Home Goals Against Opponent</td>
-                <td><%=score1%></td>
-                <td><%=score2%></td>
-            </tr>
-            <tr>
-                <td>Total Away Goals Against Opponent</td>
-                <td><%=sum3%></td>
-                <td><%=sum4%></td>
+                <td><%=name%> Goals Conceded Away From Home Last Season</td>
+                <td><%=goalsName%></td>
             </tr>
         </table>
 
@@ -840,10 +899,10 @@
             // Draw the chart and set the chart values
             function drawChart() {
                 var data = google.visualization.arrayToDataTable([
-                    ['Task1', 'Avg Goals'],
-                    ['Avg Amount of Goals Per Game', <%=totalAvg%>],
-                    ['Average Amount of Goals Per Game For Home Team', <%=df2.format(totalAvg1)%>],
-                    ['Average Amount of Goals Per Game For Away Team', <%=df2.format(totalAvg1)%>]
+                    ['Task1', 'Average Goals'],
+                    ['Total Avg Goals Per Game', <%=totalAvg%>],
+                    ['Avg Goals Per Game For <%=name%>', <%=df2.format(totalAvg1)%>],
+                    ['Avg Goals Per Game For <%=surname%>', <%=df2.format(totalAvg1)%>]
                 ]);
 
                 // Optional; add a title and set the width and height of the chart
@@ -863,13 +922,14 @@
             // Draw the chart and set the chart values
             function drawChart() {
                 var data = google.visualization.arrayToDataTable([
-                    ['Task1', 'Clean Sheets'],
-                    ['Clean Sheets For Home Team Against Opponent', <%=amountOfCleanSheetsName%>],
-                    ['Clean Sheets For Away Team Against Opponent', <%=amountOfCleanSheetsSurName%>]
+                    ['Task1', 'Results'],
+                    ['<%=name%> Wins', <%=nameWins%>],
+                    ['Draws', <%=draws%>],
+                    ['<%=surname%> Wins', <%=surnameWins%>]
                 ]);
 
                 // Optional; add a title and set the width and height of the chart
-                var options = {'title':'Clean Sheets', 'width':400, 'height':300};
+                var options = {'title':'Results', 'width':400, 'height':300};
 
                 // Display the chart inside the <div> element with id="piechart"
                 var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
@@ -885,13 +945,13 @@
             // Draw the chart and set the chart values
             function drawChart() {
                 var data = google.visualization.arrayToDataTable([
-                    ['Task1', 'Total Amount of Goals Against Opponent'],
-                    ['Total Amount of Goals For Home Team Against Opponent', <%=totalGoals1%>],
-                    ['Total Amount of Goals For Away Team Against Opponent', <%=totalGoals2%>]
+                    ['Task1', 'Total Amount of Goals'],
+                    ['Total Goals For <%=name%> Against <%=surname%>', <%=totalGoals1%>],
+                    ['Total Goals For <%=surname%> Against <%=name%>', <%=totalGoals2%>]
                 ]);
 
                 // Optional; add a title and set the width and height of the chart
-                var options = {'title':'Total Amount of Goals Against Opponent', 'width':400, 'height':300};
+                var options = {'title':'Total Amount of Goals', 'width':400, 'height':300};
 
                 // Display the chart inside the <div> element with id="piechart"
                 var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
