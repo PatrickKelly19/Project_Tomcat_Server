@@ -79,20 +79,13 @@
 
                     DecimalFormat decimal = new DecimalFormat(".##");
 
-                    PreparedStatement last5HomeTeam, last5AwayTeam, noOfGames, totalGoals, homeGoalsCS, homeGoalsPS, awayGoalsCSPS,                                             resultsBetHomeAway, totalGoalsLS, totalHomeGoalsLS, totalAwayGoalsLS, homeGoalsLSHT,                                                      goalsConcededAwayLSAT, homeGoalsLSAT, goalConcededAwayLSHT, totalGoalsCS, totalHomeGoalsCS,                                               totalAwayGoalsCS, homeGoalsCSHT, goalsConcededAwayCSAT, homeGoalsCSAT, goalsConcededAwayCSHT;
+                    PreparedStatement last5HomeTeam, last5AwayTeam, noOfGames, totalGoals, homeGoalsCS, homeGoalsPS, awayGoalsCSPS,                                                        resultsBetHomeAway, totalGoalsLS, totalHomeGoalsLS, totalAwayGoalsLS, homeGoalsLSHT, goalsConcededAwayLSAT,                                          homeGoalsLSAT, goalConcededAwayLSHT, totalGoalsCS, totalHomeGoalsCS, totalAwayGoalsCS, homeGoalsCSHT,                                                goalsConcededAwayCSAT, homeGoalsCSAT, goalsConcededAwayCSHT;
 
-                    int totalNoOfGames = 0, totalNoOfGamesBetHomeAway = 0;
-                    int countNoHomeGamesHT = 0, countNoAwayGamesAT = 0, countNoHomeGamesAT = 0, countNoAwayGamesHT = 0;
-                    int sumOfHomeGoalsCSHT = 0, sumOfHomeGoalsPSHT = 0, sumOfAwayGoalsCSAT = 0, sumOfHomeGoalsPSAT = 0, sumOfAwayGoalsHT = 0, sumOfAwayGoalsAT = 0, goals_1617 = 0, goalsHome_1617 = 0, goalsAway_1617 = 0,
-                            goalsAtHomeLSAT = 0, goalsConAwayLSHT = 0, goals_1718 = 0, goalsHome_1718 = 0, goalsAway_1718 = 0, goalsAtHomeCSAT = 0, goalsConAwayCSHT = 0;
-                    int goalsAtHomeLSHT = 0, goalsConAwayLSAT = 0, goalsAtHomeCSHT = 0, goalsConAwayCSAT = 0;
-                    int amtOfDrawsHTAT = 0, homeTeamWins = 0, awayTeamWins = 0;
-                    int amountOfCleanSheetsName = 0;
-                    int amountOfCleanSheetsSurName = 0;
-                    double avgNumberLastSeason = 0.0, avgNumberLastSeasonHome = 0.0, avgNumberLastSeasonAway = 0;
-                    double avgNumberThisSeason = 0.0, avgNumberThisSeasonHome = 0.0, avgNumberThisSeasonAway = 0;
-                    ResultSet rset, rset1, rset2, rset3, rset4, rset4a, rset5, rset6, rset7, rset7a, rset7b, rset7c, rset7d, rset8, rset8a, rset9, rset9a,
-                            rset9b, rset9c, rset9d, rset9e, rset9f;
+                    int totalNoOfGames = 0, totalNoOfGamesBetHomeAway = 0, countNoHomeGamesHT = 0, countNoAwayGamesAT = 0, countNoHomeGamesAT = 0,                           countNoAwayGamesHT = 0, sumOfHomeGoalsCSHT = 0, sumOfHomeGoalsPSHT = 0, sumOfAwayGoalsCSAT = 0, sumOfHomeGoalsPSAT = 0,                              sumOfAwayGoalsHT = 0, sumOfAwayGoalsAT = 0, goals_1617 = 0, goalsHome_1617 = 0, goalsAway_1617 = 0, goalsAtHomeLSAT = 0,                             goalsConAwayLSHT = 0, goals_1718 = 0, goalsHome_1718 = 0, goalsAway_1718 = 0, goalsAtHomeCSAT = 0, goalsConAwayCSHT = 0,                             goalsAtHomeLSHT = 0, goalsConAwayLSAT = 0, goalsAtHomeCSHT = 0, goalsConAwayCSAT = 0, amtOfDrawsHTAT = 0, homeTeamWins = 0,                          awayTeamWins = 0, amountOfCleanSheetsName = 0, amountOfCleanSheetsSurName = 0;
+
+                    double avgNumberLastSeason = 0.0, avgNumberLastSeasonHome = 0.0, avgNumberLastSeasonAway = 0, avgNumberThisSeason = 0.0,                                    avgNumberThisSeasonHome = 0.0, avgNumberThisSeasonAway = 0;
+
+                    ResultSet resultSet1, resultSet2, resultSet3, resultSet5, resultSet20, resultSet21, resultSet22, resultSet4, resultSet6,                                       resultSet7, resultSet8, resultSet9, resultSet10, resultSet11, resultSet12, resultSet13,                                                              resultSet14, resultSet15, resultSet16, resultSet17, resultSet18, resultSet19;
 
 
                     //Queries To Database For Stats Required
@@ -223,28 +216,28 @@
                     homeGoalsCSAT.setString(1, awayTeam);
                     goalsConcededAwayCSHT.setString(1, homeTeam);
 
-                    rset = last5HomeTeam.executeQuery();
-                    rset1 = last5AwayTeam.executeQuery();
-                    rset2 = noOfGames.executeQuery();
-                    rset3 = totalGoals.executeQuery();
-                    rset4 = homeGoalsCS.executeQuery();
-                    rset4a = homeGoalsPS.executeQuery();
-                    rset5 = awayGoalsCSPS.executeQuery();
-                    rset6 = resultsBetHomeAway.executeQuery();
-                    rset7 = totalGoalsLS.executeQuery();
-                    rset7a = totalHomeGoalsLS.executeQuery();
-                    rset7b = totalAwayGoalsLS.executeQuery();
-                    rset7c = homeGoalsLSHT.executeQuery();
-                    rset7d = goalsConcededAwayLSAT.executeQuery();
-                    rset8 = homeGoalsLSAT.executeQuery();
-                    rset8a = goalConcededAwayLSHT.executeQuery();
-                    rset9 = totalGoalsCS.executeQuery();
-                    rset9a = totalHomeGoalsCS.executeQuery();
-                    rset9b = totalAwayGoalsCS.executeQuery();
-                    rset9c = homeGoalsCSHT.executeQuery();
-                    rset9d = goalsConcededAwayCSAT.executeQuery();
-                    rset9e = homeGoalsCSAT.executeQuery();
-                    rset9f = goalsConcededAwayCSHT.executeQuery();
+                    resultSet1 = last5HomeTeam.executeQuery();
+                    resultSet2 = last5AwayTeam.executeQuery();
+                    resultSet3 = noOfGames.executeQuery();
+                    resultSet5 = totalGoals.executeQuery();
+                    resultSet20 = homeGoalsCS.executeQuery();
+                    resultSet21 = homeGoalsPS.executeQuery();
+                    resultSet22 = awayGoalsCSPS.executeQuery();
+                    resultSet4 = resultsBetHomeAway.executeQuery();
+                    resultSet6 = totalGoalsLS.executeQuery();
+                    resultSet7 = totalHomeGoalsLS.executeQuery();
+                    resultSet8 = totalAwayGoalsLS.executeQuery();
+                    resultSet9 = homeGoalsLSHT.executeQuery();
+                    resultSet10 = goalsConcededAwayLSAT.executeQuery();
+                    resultSet11 = homeGoalsLSAT.executeQuery();
+                    resultSet12 = goalConcededAwayLSHT.executeQuery();
+                    resultSet13 = totalGoalsCS.executeQuery();
+                    resultSet14 = totalHomeGoalsCS.executeQuery();
+                    resultSet15 = totalAwayGoalsCS.executeQuery();
+                    resultSet16 = homeGoalsCSHT.executeQuery();
+                    resultSet17 = goalsConcededAwayCSAT.executeQuery();
+                    resultSet18 = homeGoalsCSAT.executeQuery();
+                    resultSet19 = goalsConcededAwayCSHT.executeQuery();
 
                     //Home Teams Last 5 Games
                     out.println("<div class=\"a\">");
@@ -262,16 +255,16 @@
                             "        <th>Winner</th>\n" +
                             "</tr>");
                     out.println("Recent Form: ");
-                    while (rset.next()) {
-                        out.println("<td>" + rset.getString("HomeTeam") + "</td>");
-                        out.println("<td>" + rset.getString("AwayTeam") + "</td>");
-                        out.println("<td>" + rset.getInt("HomeScore") + "</td>");
-                        out.println("<td>" + rset.getInt("AwayScore") + "</td>");
-                        out.println("<td>" + rset.getString("Winner") + "</td>");
+                    while (resultSet1.next()) {
+                        out.println("<td>" + resultSet1.getString("HomeTeam") + "</td>");
+                        out.println("<td>" + resultSet1.getString("AwayTeam") + "</td>");
+                        out.println("<td>" + resultSet1.getInt("HomeScore") + "</td>");
+                        out.println("<td>" + resultSet1.getInt("AwayScore") + "</td>");
+                        out.println("<td>" + resultSet1.getString("Winner") + "</td>");
                         out.println("</tr>");
 
                         //Getting Recent Form of Home Team
-                        String form = rset.getString("Winner");
+                        String form = resultSet1.getString("Winner");
 
                         if (form.equals(homeTeam)) {
                             out.println("<font color=\"lime\">W</font>");
@@ -299,16 +292,16 @@
                             "        <th>Winner</th>\n" +
                             "</tr>");
                     out.println("Recent Form: ");
-                    while (rset1.next()) {
-                        out.println("<td>" + rset1.getString("HomeTeam") + "</td>");
-                        out.println("<td>" + rset1.getString("AwayTeam") + "</td>");
-                        out.println("<td>" + rset1.getInt("HomeScore") + "</td>");
-                        out.println("<td>" + rset1.getInt("AwayScore") + "</td>");
-                        out.println("<td>" + rset1.getString("Winner") + "</td>");
+                    while (resultSet2.next()) {
+                        out.println("<td>" + resultSet2.getString("HomeTeam") + "</td>");
+                        out.println("<td>" + resultSet2.getString("AwayTeam") + "</td>");
+                        out.println("<td>" + resultSet2.getInt("HomeScore") + "</td>");
+                        out.println("<td>" + resultSet2.getInt("AwayScore") + "</td>");
+                        out.println("<td>" + resultSet2.getString("Winner") + "</td>");
                         out.println("</tr>");
 
                         //Getting Recent Form of Away Team
-                        String form1 = rset1.getString("Winner");
+                        String form1 = resultSet2.getString("Winner");
 
                         if (form1.equals(awayTeam)) {
                             out.println("<font color=\"lime\">W</font>");
@@ -321,17 +314,17 @@
                     out.println("</table>");
 
                     //Getting Number of Games/Wins/Loses/Draws for Fixture Between Home Team and Away Team
-                    while (rset2.next()) {
+                    while (resultSet3.next()) {
 
-                        String home1 = rset2.getString("HomeTeam");
-                        String home2 = rset2.getString("AwayTeam");
+                        String home1 = resultSet3.getString("HomeTeam");
+                        String home2 = resultSet3.getString("AwayTeam");
 
-                        int count1 = rset2.getInt("HomeScore");
-                        int count2 = rset2.getInt("AwayScore");
+                        int count1 = resultSet3.getInt("HomeScore");
+                        int count2 = resultSet3.getInt("AwayScore");
 
                         totalNoOfGames++;
 
-                        String result = rset2.getString("Winner");
+                        String result = resultSet3.getString("Winner");
 
                         if (result.equals(homeTeam)) {
                             homeTeamWins++;
@@ -369,27 +362,27 @@
                             "        <th>Away Score</th>\n" +
                             "        <th>Winner</th>\n" +
                             "</tr>");
-                    while (rset6.next()) {
-                        out.println("<td>" + rset6.getString("HomeTeam") + "</td>");
-                        out.println("<td>" + rset6.getString("AwayTeam") + "</td>");
-                        out.println("<td>" + rset6.getInt("HomeScore") + "</td>");
-                        out.println("<td>" + rset6.getInt("AwayScore") + "</td>");
-                        out.println("<td>" + rset6.getString("Winner") + "</td>");
+                    while (resultSet4.next()) {
+                        out.println("<td>" + resultSet4.getString("HomeTeam") + "</td>");
+                        out.println("<td>" + resultSet4.getString("AwayTeam") + "</td>");
+                        out.println("<td>" + resultSet4.getInt("HomeScore") + "</td>");
+                        out.println("<td>" + resultSet4.getInt("AwayScore") + "</td>");
+                        out.println("<td>" + resultSet4.getString("Winner") + "</td>");
                         out.println("</tr>");
                     }
                     out.println("</table>");
 
                     //Getting Total Number of Goals Between Home and Away Teams From 2016/17 and 2017/18 Season
-                    while (rset3.next()) {
+                    while (resultSet5.next()) {
 
-                        int c = rset3.getInt(1);
+                        int c = resultSet5.getInt(1);
                         totalNoOfGamesBetHomeAway = totalNoOfGamesBetHomeAway + c;
                     }
 
                     //Getting Total Number of Goals 2016/17 Season
-                    while (rset7.next()) {
+                    while (resultSet6.next()) {
 
-                        int c = rset7.getInt(1);
+                        int c = resultSet6.getInt(1);
                         goals_1617 = goals_1617 + c;
 
                         //Average Number of Goals Scored Away 2016/17
@@ -397,9 +390,9 @@
                     }
 
                     //Getting Total Number of Home Goals 2016/17 Season
-                    while (rset7a.next()) {
+                    while (resultSet7.next()) {
 
-                        int c = rset7a.getInt(1);
+                        int c = resultSet7.getInt(1);
                         goalsHome_1617 = goalsHome_1617 + c;
 
                         //Average Number of Goals Scored Home 2016/17
@@ -407,9 +400,9 @@
                     }
 
                     //Getting Total Number of Away Goals 2016/17 Season
-                    while (rset7b.next()) {
+                    while (resultSet8.next()) {
 
-                        int c = rset7b.getInt(1);
+                        int c = resultSet8.getInt(1);
                         goalsAway_1617 = goalsAway_1617 + c;
 
                         //Average Number of Goals Scored Away 2016/17
@@ -417,38 +410,38 @@
                     }
 
                     //Amount of Home Goals Scored in 2016/17 Season From Home Team
-                    while (rset7c.next()) {
+                    while (resultSet9.next()) {
 
-                        int c = rset7c.getInt(2);
+                        int c = resultSet9.getInt(2);
                         goalsAtHomeLSHT = goalsAtHomeLSHT + c;
                     }
 
                     //Amount of Goals Conceded By Away Team Away From Home in 2016/17 Season
-                    while (rset7d.next()) {
+                    while (resultSet10.next()) {
 
-                        int c = rset7d.getInt(3);
+                        int c = resultSet10.getInt(3);
                         goalsConAwayLSAT = goalsConAwayLSAT + c;
                     }
 
                     //Amount of Home Goals Scored in 2016/17 Season From Away Team
-                    while (rset8.next()) {
+                    while (resultSet11.next()) {
 
-                        int c = rset8.getInt(2);
+                        int c = resultSet11.getInt(2);
                         goalsAtHomeLSAT = goalsAtHomeLSAT + c;
                     }
 
                     //Amount of Goals Conceded By Home Team Away From Home in 2016/17 Season
-                    while (rset8a.next()) {
+                    while (resultSet12.next()) {
 
-                        int c = rset8a.getInt(3);
+                        int c = resultSet12.getInt(3);
                         goalsConAwayLSHT = goalsConAwayLSHT + c;
                     }
 
                     //Getting Total Number of Goals 2017/18 Season
-                    while (rset9.next()) {
+                    while (resultSet13.next()) {
 
-                        int c = rset9.getInt(1);
-                        int getCurrentGamesPlayed = rset9.getInt(2);
+                        int c = resultSet13.getInt(1);
+                        int getCurrentGamesPlayed = resultSet13.getInt(2);
                         goals_1718 = goals_1718 + c;
 
                         //Average Number of Goals Scored 2017/18
@@ -456,10 +449,10 @@
                     }
 
                     //Getting Total Number of Home Goals 2017/18 Season
-                    while (rset9a.next()) {
+                    while (resultSet14.next()) {
 
-                        int c = rset9a.getInt(1);
-                        int getCurrentGamesPlayed = rset9a.getInt(2);
+                        int c = resultSet14.getInt(1);
+                        int getCurrentGamesPlayed = resultSet14.getInt(2);
                         goalsHome_1718 = goalsHome_1718 + c;
 
                         //Average Number of Goals Scored Home 2017/18
@@ -467,10 +460,10 @@
                     }
 
                     //Getting Total Number of Away Goals 2017/18 Season
-                    while (rset9b.next()) {
+                    while (resultSet15.next()) {
 
-                        int c = rset9b.getInt(1);
-                        int getCurrentGamesPlayed = rset9b.getInt(2);
+                        int c = resultSet15.getInt(1);
+                        int getCurrentGamesPlayed = resultSet15.getInt(2);
                         goalsAway_1718 = goalsAway_1718 + c;
 
                         //Average Number of Goals Scored Away 2017/18
@@ -478,90 +471,90 @@
                     }
 
                     //Amount of Home Goals Scored in 2017/18 Season From Home Team
-                    while (rset9c.next()) {
+                    while (resultSet16.next()) {
 
-                        int c = rset9c.getInt(2);
-                        countNoHomeGamesHT = rset9c.getInt(3); //Counting Number of Home Games Played This Season for Home Team
+                        int c = resultSet16.getInt(2);
+                        countNoHomeGamesHT = resultSet16.getInt(3); //Counting Number of Home Games Played This Season for Home Team
                         goalsAtHomeCSHT = goalsAtHomeCSHT + c;
                     }
 
                     //Amount of Goals Conceded By Away Team Away From Home in 2017/18 Season
-                    while (rset9d.next()) {
+                    while (resultSet17.next()) {
 
-                        int c = rset9d.getInt(3);
-                        int count = rset9d.getInt(5);
+                        int c = resultSet17.getInt(3);
+                        int count = resultSet17.getInt(5);
                         countNoAwayGamesAT = countNoAwayGamesAT + count; //Counting Number of Away Games Played This Season For Away Team
                         goalsConAwayCSAT = goalsConAwayCSAT + c;
                     }
 
                     //Amount of Home Goals Scored in 2017/18 Season From Away Team
-                    while (rset9e.next()) {
+                    while (resultSet18.next()) {
 
-                        int c = rset9e.getInt(2);
-                        int count = rset9e.getInt(3);
+                        int c = resultSet18.getInt(2);
+                        int count = resultSet18.getInt(3);
                         countNoHomeGamesAT = countNoHomeGamesAT + count; //Counting Number of Home Games Played This Season For Away Team
                         goalsAtHomeCSAT = goalsAtHomeCSAT + c;
                     }
 
                     //Amount of Goals Conceded By Home Team Away From Home in 2017/18 Season
-                    while (rset9f.next()) {
+                    while (resultSet19.next()) {
 
-                        int c = rset9f.getInt(3);
-                        int count = rset9f.getInt(5);
+                        int c = resultSet19.getInt(3);
+                        int count = resultSet19.getInt(5);
                         countNoAwayGamesHT = countNoAwayGamesHT + count; //Counting Number of Away Games Played This Season For Home Team
                         goalsConAwayCSHT = goalsConAwayCSHT + c;
                     }
 
                     //Home Goals Current Season Against Opponent
-                    while (rset4.next()) {
+                    while (resultSet20.next()) {
 
-                        String amtGoalsHome = rset4.getString("HomeTeam");
+                        String amtGoalsHome = resultSet20.getString("HomeTeam");
 
                         //Getting Amount of Goals for Home Team At Home
                         if (amtGoalsHome.equals(homeTeam)) {
-                            int c = rset4.getInt(3);
+                            int c = resultSet20.getInt(3);
                             sumOfHomeGoalsCSHT = sumOfHomeGoalsCSHT + c;
                         }
 
                         //Getting Amount of Goals for Away Team At Home
                         if (amtGoalsHome.equals(awayTeam)) {
-                            int c = rset4.getInt(3);
+                            int c = resultSet20.getInt(3);
                             sumOfAwayGoalsCSAT = sumOfAwayGoalsCSAT + c;
                         }
                     }
 
                     //Home Goals From Previous Seasons Against Opponent
-                    while (rset4a.next()) {
+                    while (resultSet21.next()) {
 
-                        String amtGoalsHomePS = rset4a.getString("HomeTeam");
+                        String amtGoalsHomePS = resultSet21.getString("HomeTeam");
 
                         //Getting Amount of Goals for Home Team At Home
                         if (amtGoalsHomePS.equals(homeTeam)) {
-                            int c = rset4a.getInt(3);
+                            int c = resultSet21.getInt(3);
                             sumOfHomeGoalsPSHT = sumOfHomeGoalsPSHT + c;
                         }
 
                         //Getting Amount of Goals for Home Team At Home
                         if (amtGoalsHomePS.equals(awayTeam)) {
-                            int c = rset4a.getInt(3);
+                            int c = resultSet21.getInt(3);
                             sumOfHomeGoalsPSAT = sumOfHomeGoalsPSAT + c;
                         }
                     }
 
                     //Home Goals From Previous Seasons and Current Season Against Opponent
-                    while (rset5.next()) {
+                    while (resultSet22.next()) {
 
-                        String amtGoalsAwayPSCS = rset5.getString("AwayTeam");
+                        String amtGoalsAwayPSCS = resultSet22.getString("AwayTeam");
 
                         //Getting Amount of Goals for Home Team Away From Home
                         if (amtGoalsAwayPSCS.equals(homeTeam)) {
-                            int c = rset5.getInt(3);
+                            int c = resultSet22.getInt(3);
                             sumOfAwayGoalsHT = sumOfAwayGoalsHT + c;
                         }
 
                         //Getting Amount of Goals for Away Team Away From Home
                         if (amtGoalsAwayPSCS.equals(awayTeam)) {
-                            int c = rset5.getInt(3);
+                            int c = resultSet22.getInt(3);
                             sumOfAwayGoalsAT = sumOfAwayGoalsAT + c;
                         }
                     }
@@ -650,10 +643,7 @@
                     double predictedGoalCSHT = teanAttackStrengthCSHT * teamDefenceStrengthCSAT * avgNumberThisSeasonHome;
                     double predictedGoalCSAT = teamAttackStrengthCSAT * teamDefenceStrengthCSHT * avgNumberThisSeasonAway;
 
-                    double fact = 1;
-                    double fact1 = 1;
-                    double fact12 = 1;
-                    double fact13 = 1;
+                    double includeZero = 1; //Factorial for Poisson Distribution Formula
 
                     //Arraylist to Hold Predicted Outcomes
                     List<Double> listLSHT = new ArrayList<Double>();
@@ -662,59 +652,45 @@
                     List<Double> listCSAT = new ArrayList<Double>();
 
                     //Poisson Distribution - Predicting Multiple Outcomes
-                    for (double i = 0; i <= 5; i++) {
-                        fact = fact * i;
-                        if (fact == 0) {
-                            fact = fact + 1;
-                        }
-                        double calc = Math.pow(predictedGoalLSHT, i);
-                        double exp1 = Math.exp(-predictedGoalLSHT);
-                        double sn = calc * exp1;
-                        double calco = sn / fact;
-                        double calco1 = calco * 100;
-                        listLSHT.add(calco1);
-                    }
 
-                    //Poisson Distribution - Predicting Multiple Outcomes
+                    //i is Expected Goals 0 to 5
                     for (double i = 0; i <= 5; i++) {
-                        fact1 = fact1 * i;
-                        if (fact1 == 0) {
-                            fact1 = fact1 + 1;
+                        includeZero = includeZero * i;
+                        if (includeZero == 0) {
+                            includeZero = includeZero + 1;
                         }
-                        double calc1 = Math.pow(predictedGoalLSAT, i);
-                        double exp2 = Math.exp(-predictedGoalLSAT);
-                        double sn1 = calc1 * exp2;
-                        double calco1 = sn1 / fact1;
-                        double calco2 = calco1 * 100;
-                        listLSAT.add(calco2);
-                    }
 
-                    //Poisson Distribution - Predicting Multiple Outcomes
-                    for (double i = 0; i <= 5; i++) {
-                        fact12 = fact12 * i;
-                        if (fact12 == 0) {
-                            fact12 = fact12 + 1;
-                        }
-                        double calc = Math.pow(predictedGoalCSHT, i);
-                        double exp1 = Math.exp(-predictedGoalCSHT);
-                        double sn = calc * exp1;
-                        double calco = sn / fact12;
-                        double calco1 = calco * 100;
-                        listCSHT.add(calco1);
-                    }
+                        //Predicted Goals is the Average Event Rate Per Game
+                        double powerLSHT = Math.pow(predictedGoalLSHT, i);
+                        double powerLSAT = Math.pow(predictedGoalLSAT, i);
+                        double powerCSHT = Math.pow(predictedGoalCSHT, i);
+                        double powerCSAT = Math.pow(predictedGoalCSAT, i);
 
-                    //Poisson Distribution - Predicting Multiple Outcomes
-                    for (double i = 0; i <= 5; i++) {
-                        fact13 = fact13 * i;
-                        if (fact13 == 0) {
-                            fact13 = fact13 + 1;
-                        }
-                        double calc1 = Math.pow(predictedGoalCSAT, i);
-                        double exp2 = Math.exp(-predictedGoalCSAT);
-                        double sn1 = calc1 * exp2;
-                        double calco1 = sn1 / fact13;
-                        double calco2 = calco1 * 100;
-                        listCSAT.add(calco2);
+                        double expLSHT = Math.exp(-predictedGoalLSHT);
+                        double expLSAT = Math.exp(-predictedGoalLSAT);
+                        double expCSHS = Math.exp(-predictedGoalCSHT);
+                        double expCSAT = Math.exp(-predictedGoalCSAT);
+
+                        double resLSHT = powerLSHT * expLSHT;
+                        double resLSAT = powerLSAT * expLSAT;
+                        double resCSHT = powerCSHT * expCSHS;
+                        double resCSAT = powerCSAT * expCSAT;
+
+                        double res1LSHT = resLSHT / includeZero;
+                        double res1LSAT = resLSAT / includeZero;
+                        double res1CSHT = resCSHT / includeZero;
+                        double res1CSAT = resCSAT / includeZero;
+
+
+                        double res2LSHT = res1LSHT * 100;
+                        double res2LSAT = res1LSAT * 100;
+                        double res2CSHT = res1CSHT * 100;
+                        double res2CSAT = res1CSAT * 100;
+
+                        listLSHT.add(res2LSHT); //Percentages for 0 to 5 Goals Added to Array Lists
+                        listLSAT.add(res2LSAT);
+                        listCSHT.add(res2CSHT);
+                        listCSAT.add(res2CSAT);
                     }
 
                     //Objects Holds Max Value from Array List
